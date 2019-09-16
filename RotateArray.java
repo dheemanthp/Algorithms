@@ -3,7 +3,8 @@ public class RotateArray{
 //Input : {1,2,3,4,5,6,7}
 //Left shift by 2 Output : {3,4,5,6,7,1,2}
 //Right Shift by 2 output : {6,7,1,2,3,4,5}
-
+//Running time : O(n *d) 
+//Space : O(1)
 
     void leftRotate(int arr[],int d, int length) {
         for (int i = 0; i < d; i++) {

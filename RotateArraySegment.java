@@ -36,6 +36,10 @@ public class RotateArraySegment {
   
     int arr[] = {1,2,3,4,5,6,7};
     int order = 2;
+    if(arr ==  null || order == 0) {
+        throw new IllegalArgumentException ("Ilegal Argument");
+        
+    }
     int segment = arr.length - order;//Right rotate
     //int segment = order; //left rotate
     

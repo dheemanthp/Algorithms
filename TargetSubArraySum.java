@@ -1,5 +1,5 @@
 public class TargetSubArraySum {
-
+//Works Only for positive inputs
 //Running time is O(n)    
     
     boolean subArraySum(int arr[], int target, int size) {
@@ -30,7 +30,7 @@ public class TargetSubArraySum {
     }
 
     public static void main(String[] args) {
-        int arr[] = { 15,2,4,8,9,5,10,23 };
+        int arr[] = { 15,2,4,8,9,5,10,23 }; //only for positive inputs
         int target = 23;
         TargetSubArraySum obj = new TargetSubArraySum();
         boolean isSubArraySum = obj.subArraySum(arr,target,arr.length);

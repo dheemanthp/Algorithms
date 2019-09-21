@@ -2,7 +2,7 @@ import java.util.HashMap;
 
 public class SubArrayWithTargetSumNegativePositiveNumbers{
 
-
+https://www.geeksforgeeks.org/find-subarray-with-given-sum-in-array-of-integers/
 //the running time is O(n)
 //keep adding every item as part of the sum 
 //put the sum and index as part of a hash map

@@ -235,6 +235,23 @@ public class Solution {
   }
 
 /////////////////////////////////////////////////////////////////    
+    //Minimum in a linked list
+/////////////////////////////////////////////////////////////////  
+    int linkedListMin() {
+    Node temp = head;
+    int min = Integer.MAX_VALUE;
+     while(temp != null){
+         if(temp.data < min) {
+           min = temp.data; 
+         }
+         temp = temp.next;
+     }
+      return min;
+    }
+
+
+  
+/////////////////////////////////////////////////////////////////    
     //print a node
 /////////////////////////////////////////////////////////////////  
     void print(Node nd) {
@@ -340,9 +357,9 @@ public class Solution {
        ld.print(ld.head);
        
         System.out.println("======================================================");
-      //ld.delete(1);
-      //ld.delete(2);
-      //ld.delete(4);
+      ld.delete(1);
+      ld.delete(2);
+      ld.delete(4);
       //ld.delete(10);
       //ld.delete(20);
       
@@ -355,6 +372,10 @@ public class Solution {
         ldNew.add(new Node(200));
         ldNew.add(new Node(300));
         ldNew.add(new Node(400));
+        ldNew.add(new Node(5));
+        ldNew.add(new Node(3));
+        ldNew.add(new Node(600));
+        ldNew.add(new Node(1000));
       //print
         System.out.println("===============Old Linked list========================");
         ld.print(ld.head);
@@ -371,10 +392,14 @@ public class Solution {
         ld.print(ld.head);
         System.out.println("===============Recursive Reverse=====================");
         //Reverse
+        ldNew.add(new Node(8));
+        ldNew.add(new Node(7));
         Node temp = ld.head;
         ld.recursiveReverse(temp);
         ld.print(ld.head);
-        System.out.println("======================================================");
+        System.out.println("===============Minimum value in a linked list==========");
+        int min  = ld.linkedListMin();
+        System.out.println("The minimum value is " + min);
 
       
         return;  

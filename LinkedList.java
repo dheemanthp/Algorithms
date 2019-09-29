@@ -150,16 +150,95 @@ public class Solution {
 /////////////////////////////////////////////////////////////////
 //Shuffle Merge
 /////////////////////////////////////////////////////////////////
-    boolean shuffleMerge(Solution ld,Solution ldnew) {
-      
-      return false; 
+    Node shuffleMerge(Solution ld,Solution ldNew) {
+      Node first = ld.head;
+      Node second = ldNew.head;
+    
+      while(true) {
+        System.out.println("merge");
+        //base case
+        if(first == null) {
+          System.out.println("case 1");
+          ld.head = second;
+          break;
+        } else if(second == null) {
+          System.out.println("case 2");
+          break;
+        } else if (first.next == null) {
+          System.out.println("case 3");
+         first.next = second;
+         break;
+        } else if (second.next == null) {
+          System.out.println("case 4");
+          second.next = first.next;
+          first.next = second;
+          break;
+        }
+
+        Node temp;
+        //Integrate it to first LinkedList
+        if(first != null && second != null) {
+          System.out.println("start merge" + "first"+ first.data + "second" + second.data);
+          temp = second.next;
+          second.next = first.next;
+          first.next = second;
+          first = second.next;
+          second = temp;
+          System.out.println("after merge" + "first"+ first.data + "second" + second.data);
+          System.out.println("merge complete");
+        }
+      }
+      return ld.head;
     }
+/////////////////////////////////////////////////////////////////
+//Reverse
+/////////////////////////////////////////////////////////////////
+  void reverse() {
+    
+    Node pres = head;
+    if(pres == null) return;
+    
+    Node prev = null;
+    Node next = null;
+    
+    while(pres != null) {
+      System.out.println("loop" + pres.data);
+      next = pres.next;
+      pres.next = prev;
+      prev = pres;
+      pres = next;
+    }
+    
+    head = prev;
+    return;
+  }
+/////////////////////////////////////////////////////////////////
+//Recursive Reverse
+/////////////////////////////////////////////////////////////////
+  void recursiveReverse(Node base) {
+    Node first;
+    Node rest;
+    
+    //base case
+    if(base == null) return;
+    
+    first =  base;
+    rest = first.next;
+    
+    if(rest == null) {
+     head = first; 
+      return;
+    }
+    recursiveReverse(rest);
+    rest.next = first;
+    first.next = null;
+  }
 
 /////////////////////////////////////////////////////////////////    
     //print a node
 /////////////////////////////////////////////////////////////////  
     void print(Node nd) {
-    Node temp = head;
+    Node temp = nd;
      while(temp != null){
          System.out.println("data is: " + temp.data);
          temp = temp.next;
@@ -177,6 +256,7 @@ public class Solution {
         }
         if(pres.data == value) {
           head = pres.next;
+          return true;
         }
         //move to the end of the Node
         while(pres != null) {
@@ -259,21 +339,44 @@ public class Solution {
        //print
        ld.print(ld.head);
        
-       System.out.println("======================================================");
+        System.out.println("======================================================");
+      //ld.delete(1);
+      //ld.delete(2);
+      //ld.delete(4);
+      //ld.delete(10);
+      //ld.delete(20);
+      
        //Shuffle Merge
        //create a new List
         Solution ldNew = new Solution();
         //create a head node
-        ldNew.head = new Node(1);
-        //add more nodes
-        ldNew.add(new Node(2));
-        ldNew.add(new Node(3));
-        ldNew.add(new Node(4));
-        ldNew.add(new Node(10));
-        ldNew.add(new Node(10));
-        ldNew.add(new Node(20));
+        ldNew.head = new Node(100);
+              //add more nodes
+        ldNew.add(new Node(200));
+        ldNew.add(new Node(300));
+        ldNew.add(new Node(400));
+      //print
+        System.out.println("===============Old Linked list========================");
+        ld.print(ld.head);
+        System.out.println("===============New Linked list========================");
+      //print
+        ld.print(ldNew.head);
+        System.out.println("=============Shuffle Merge Output====================");
         ld.shuffleMerge(ld,ldNew);
+        //print
+        ld.print(ld.head);
+        System.out.println("==================Reverse============================");
+        //Reverse
+        ld.reverse();
+        ld.print(ld.head);
+        System.out.println("===============Recursive Reverse=====================");
+        //Reverse
+        Node temp = ld.head;
+        ld.recursiveReverse(temp);
+        ld.print(ld.head);
         System.out.println("======================================================");
+
+      
         return;  
     }
 }

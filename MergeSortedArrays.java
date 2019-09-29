@@ -3,7 +3,7 @@ import java.util.*;
 
 
 public class MergeSortedArrays {
-
+//https://www.geeksforgeeks.org/merge-3-sorted-arrays/
 //Running time
 //if there are 2 arrays of size m and size n
 //O(m+n) for 2 arrays

@@ -28,6 +28,9 @@ public class Solution {
     int[] rowCheck = {-1,-1,-1,0,0,1,1,1};
     int[] columCheck = {-1,0,1,-1,1,-1,0,1};
     
+    //some would want to check in 8 directions , and some may want to check in 4 directions
+    //so accordingly set the row check and column check
+    // In Leet code it is only 4 directions :https://leetcode.com/problems/number-of-islands/
     for (int k = 0 ; k < 8 ;k ++ ) {
       //System.out.println("k = " + k + "row = " + row + "column = " + column);
      if((M[row][column] == 1) && (isSafe(row+rowCheck[k],column+columCheck[k],visited))) {
@@ -66,7 +69,8 @@ public class Solution {
   
   
  public static void main(String[] args) {
-   
+  
+  //Variety of Input Arrays
   int[][] M = new int[][] {
     {1,1,0,0,0},
     {0,1,0,0,1},
@@ -89,11 +93,13 @@ public class Solution {
     {0,0,0,1,1},
   };
 
+   //column is 1 and row is 2
    int[][] P = new int[][] {
     {1},
     {1},
   };
    
+   //Empty Array
    int[][] Q = new int[][] {
   };
 

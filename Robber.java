@@ -4,6 +4,8 @@ https://leetcode.com/problems/house-robber/
 //The idea is simple
 //you only need to keep track of the previous two maximums.
 //Everything else can be thrown out
+ //“For every house in the list, either add its gold to the max gold 2 indices back or
+ //keep the max gold 1 index back.”
 //Running time O(n)
 
   

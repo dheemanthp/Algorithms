@@ -1,4 +1,4 @@
-public class IslandProblem {
+public class Solution {
 
 //Concept is simple
 //1) Visit every cell
@@ -8,12 +8,12 @@ public class IslandProblem {
 
 
   
-  int ROW = 5;
-  int COLUMN = 5;
+  static int ROW;
+  static int COLUMN;
   
 //this check makes sure we dont go out of bounds , and also ensure to check if we have visited   
   boolean isSafe(int row , int column ,boolean[][] visited) {
-    
+    //System.out.println("Debug here");
     return( (row >= 0 && row < ROW) &&
             (column >= 0 && column < COLUMN) &&
             (!visited[row][column]));
@@ -29,6 +29,7 @@ public class IslandProblem {
     int[] columCheck = {-1,0,1,-1,1,-1,0,1};
     
     for (int k = 0 ; k < 8 ;k ++ ) {
+      //System.out.println("k = " + k + "row = " + row + "column = " + column);
      if((M[row][column] == 1) && (isSafe(row+rowCheck[k],column+columCheck[k],visited))) {
       //Recursively perform DFS on the unvisited neighbours
       DFS(row+rowCheck[k],column+columCheck[k], M, visited); 
@@ -37,6 +38,13 @@ public class IslandProblem {
 }  
 
   int countIsland(int[][] M) {
+    
+    ROW  = M.length;
+    if(ROW == 0) {
+      return 0;
+    }
+      
+    COLUMN = M[0].length;
     
     //track all the visited 
     boolean[][] visited =  new boolean[ROW][COLUMN];
@@ -67,7 +75,30 @@ public class IslandProblem {
     {1,0,1,0,1}
   };
    
-   IslandProblem island = new IslandProblem();
-   System.out.println("the number of islands are " + island.countIsland(M));
+   int[][] N = new int[][] {
+    {1,1,1,1,0},
+    {1,1,0,1,0},
+    {1,1,0,0,0},
+    {0,0,0,0,0},
+  };
+   
+   int[][] O = new int[][] {
+    {1,1,0,0,0},
+    {1,1,0,0,0},
+    {0,0,1,0,0},
+    {0,0,0,1,1},
+  };
+
+   int[][] P = new int[][] {
+    {1},
+    {1},
+  };
+   
+   int[][] Q = new int[][] {
+  };
+
+   
+   Solution island = new Solution();
+   System.out.println("the number of islands are " + island.countIsland(Q));
   }
 }

@@ -20,26 +20,6 @@ class Solution {
     root = null; 
   }
 
-
-//Non recursive Inorder , returning a Linked List
-  LinkedList<Integer> Inorderpractice(Node node) {
-  //Init stack and Linked List
-  LinkedList<Integer> LL = new LinkedList<Integer>();
-  if(node == null) {return LL; }
-  Node curr = node;
-  Stack<Node> S = new Stack<Node>();
-  while(S.size() > 0  || curr != null ) {
-    while ( curr != null) {
-      S.push(curr);
-      curr = curr.left;
-    }
-    curr = S.pop();
-    LL.add(curr.key);
-    curr = curr.right;
-  }
-    return LL;
-}    
-  
  /* 
 //Non recursive In order
   void Inorder(Node root) {
@@ -62,6 +42,25 @@ class Solution {
     
   }*/
 
+
+//Non recursive Inorder , returning a Linked List
+  LinkedList<Integer> Inorderpractice(Node node) {
+  //Init stack and Linked List
+  LinkedList<Integer> LL = new LinkedList<Integer>();
+  if(node == null) {return LL; }
+  Node curr = node;
+  Stack<Node> S = new Stack<Node>();
+  while(S.size() > 0  || curr != null ) {
+    while ( curr != null) {
+      S.push(curr);
+      curr = curr.left;
+    }
+    curr = S.pop();
+    LL.add(curr.key);
+    curr = curr.right;
+  }
+    return LL;
+}    
   
   //Non recursive PreOrder
     void Preorder(Node root) {
@@ -82,15 +81,43 @@ class Solution {
       }      
   }
 
+//Print Level order traversal Line by Line
+//https://www.geeksforgeeks.org/print-level-order-traversal-line-line/
+      List<List<Integer>> levelOrderlinebyline(Node node) {
+      //Note here below syntax
+      //List of List is finally the array List of List
+      List<List<Integer>> LL = new ArrayList<List<Integer>>();
 
-  //Give values at each level in a list of lists and calculate total level
-  ///Print all values level by level
-  
-  
-  
-  
-  
-  
+      if (node == null) {return LL;}
+      Queue<Node> Q = new LinkedList<Node>();
+      Node curr = node;
+      Q.add(curr);
+      int nodecount;
+      //check until the queue is empty
+      while (Q.size() > 0) {
+
+        //keep track of number of elements in queue,and reset it
+        nodecount = Q.size();
+        //Run this loop for every level
+        List<Integer> L = new ArrayList<Integer>();
+        while (nodecount > 0) {
+
+
+        curr = Q.poll();//remove the element from queue
+        L.add(curr.key);
+        //System.out.print(curr.val + " ");
+
+       if(curr.left != null) { Q.add(curr.left); }
+       if(curr.right != null) { Q.add(curr.right);}  
+       nodecount --;
+        }
+        LL.add(L);
+        //System.out.println("");
+      }
+      return LL;
+    }
+
+//Print Level order traversal
   void PrintLevelOrderTraversal(Node node) {
     
     if(node == null ) return;
@@ -112,18 +139,6 @@ class Solution {
       }
     
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
   //Non recursive Post Order
   //2 stack solution
@@ -276,6 +291,9 @@ class Solution {
    
    System.out.println("Level order traversal");
    BT.PrintLevelOrderTraversal(BT.root);
+   System.out.println("Level order traversal line by line");
+   //write iterator to print List of List below
+   BT.levelOrderlinebyline(BT.root);
    
   }
 }

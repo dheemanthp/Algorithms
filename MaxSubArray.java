@@ -4,6 +4,8 @@ public class MaxSubArray {
 
 //Can also handle negative values
 //Running time : O(n)
+//input is {-2,-3,4,-1,-2,1,5,3,-3};    
+//output is 10 and the max subarray [4,-1,-2,1,5,3]
     
     int maxSubArray(int[] arr,int size) {
     

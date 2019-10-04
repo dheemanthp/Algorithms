@@ -21,6 +21,8 @@ public class Solution {
 //Buy@ 100Sell@ 310
 //Buy@ 40Sell@ 695
 //Running time O(n)
+//check below link very useful
+//http://bangbingsyb.blogspot.com/2014/11/leetcode-best-time-to-buy-and-sell.html
 
   List<Profit> maxProfit(int[] price , int size) {
     

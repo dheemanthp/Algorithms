@@ -7,7 +7,9 @@ import java.lang.Math;
 
 public class Solution {
 //There are two sorted arrays A and B of size m and n respectively.
-//Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).  
+//Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
+//https://www.programcreek.com/2012/12/leetcode-median-of-two-sorted-arrays-java/ 
+  
 
 public double findMedianSortedArrays(int[] nums1, int[] nums2) {
     int total = nums1.length+nums2.length;

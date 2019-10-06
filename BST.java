@@ -106,6 +106,30 @@ public class Solution {
      return(Math.max(1 + maxDepth(node.left), 1+ maxDepth(node.right)));
     }
   }
+
+/*
+ Compute the "minDepth" of a tree -- the number of nodes along
+ the shortest path from the root node down to the farthest leaf node.
+*/
+//NOTE :dheemz : the path must end on a leaf node 
+//     :Note that the path must end on a leaf node.
+//     Hence the input of [3,2] is not 1 but 2
+//check special case is updated for this purpose
+  
+  public int minDepth(TreeNode root) {
+        if(root == null) return 0;
+        //Special case: If left subtree is NULL, recur for right subtree 
+        else if (root.left == null) 
+            return minDepth(root.right) + 1; 
+        //Special case: If right subtree is NULL, recur for left subtree 
+        else if (root.right == null) 
+            return minDepth(root.left) + 1; 
+        //normal case
+        else {
+            return Math.min(1+minDepth(root.left),1+minDepth(root.right));
+        }
+    }
+
   
  /*
  Given a non-empty binary search tree,

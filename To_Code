@@ -1,0 +1,9 @@
+Permutation & Combination:
+
+1) https://www.geeksforgeeks.org/generate-cyclic-permutations-number/
+The idea is to generate next permutation of a number using below formula.
+    rem = num % 10;
+    div = num / 10;
+    num = (pow(10, n - 1)) * rem + div;
+
+

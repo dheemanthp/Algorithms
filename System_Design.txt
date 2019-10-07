@@ -1,0 +1,19 @@
+System Design : The main aspects of System Design , High Level Design
+You may have to cover Low level design : Interfaces and classes and their interaction , inheritence and polymorphism
+
+
+1) Scalability: Performance loss vs Cost
+2) Reliability : Redundancy is a key aspect to ensure reliability but comes at a cost
+3) Availability : Percentage of time a system remains operational
+4) Efficiency: Response time , throughput
+5) Mangebility : Ease of operation, maintainence , ease of diagnostics ,ease of updates
+6) Vulnerability & security : Identify Security Risks
+7) Concurrency : 
+
+Horizontal vs. Vertical Scaling: 
+Horizontal scaling means that you scale by adding more servers into your pool of resources
+Example: Cassandra and MongoDB
+
+whereas Vertical scaling means that you scale by adding more power 
+(CPU, RAM, Storage, etc.) to an existing server.
+Example:Mysql

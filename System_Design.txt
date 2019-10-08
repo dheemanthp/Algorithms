@@ -83,22 +83,33 @@ like adding servers to the DB pool or changing our partitioning scheme without h
 
 Partitioning Criteria
 
-a. Key or Hash-based partitioning: Under this scheme, we apply a hash function to some key attributes of the entity we are storing; that yields the partition number. For example, if we have 100 DB servers and our ID is a numeric value that gets incremented by one each time a new record is inserted
+a. Key or Hash-based partitioning: Under this scheme, we apply a hash function to some key attributes 
+of the entity we are storing; that yields the partition number. For example, if we have 100 DB servers 
+and our ID is a numeric value that gets incremented by one each time a new record is inserted
 
-b. List partitioning: In this scheme, each partition is assigned a list of values, so whenever we want to insert a new record, we will see which partition contains our key and then store it there. For example, we can decide all users living in Iceland, Norway, Sweden, Finland, or Denmark will be stored in a partition for the Nordic countries.
+b. List partitioning: In this scheme, each partition is assigned a list of values, so whenever we want to
+insert a new record, we will see which partition contains our key and then store it there. 
+For example, we can decide all users living in Iceland, Norway, Sweden, Finland, or Denmark 
+will be stored in a partition for the Nordic countries.
 
-c. Round-robin partitioning: This is a very simple strategy that ensures uniform data distribution. With ‘n’ partitions, the ‘i’ tuple is assigned to partition (i mod n).
+c. Round-robin partitioning: This is a very simple strategy that ensures uniform data distribution. 
+With ‘n’ partitions, the ‘i’ tuple is assigned to partition (i mod n).
 
-d. Composite partitioning: Under this scheme, we combine any of the above partitioning schemes to devise a new scheme. For example, first applying a list partitioning scheme and then a hash based partitioning. Consistent hashing could be considered a composite of hash and list partitioning where the hash reduces the key space to a size that can be listed.
+d. Composite partitioning: Under this scheme, we combine any of the above partitioning schemes to
+devise a new scheme. For example, first applying a list partitioning scheme and then a hash based partitioning.
+Consistent hashing could be considered a composite of hash and list partitioning where the hash 
+reduces the key space to a size that can be listed.
 
 Common Problems of Data Partitioning
 a. Joins and Denormalization: once a database is partitioned and spread across multiple machines 
 it is often not feasible to perform joins that span database partitions.
 Such joins will not be performance efficient since data has to be compiled from multiple servers.
  A common workaround for this problem is to denormalize the database so that queries that previously 
-required joins can be performed from a single table. Of course, the service now has to deal with all the perils of denormalization such as data inconsistency.
+required joins can be performed from a single table. Of course, the service now has to deal with all the
+ perils of denormalization such as data inconsistency.
 
-b. Referential integrity: As we saw that performing a cross-partition query on a partitioned database is not feasible, similarly, trying to enforce data integrity constraints such as foreign keys in a partitioned database can be extremely difficult.
+b. Referential integrity: As we saw that performing a cross-partition query on a partitioned database is not
+feasible, similarly, trying to enforce data integrity constraints such as foreign keys in a partitioned database can be extremely difficult.
 https://database.guide/what-is-referential-integrity/
 
 c. Rebalancing: There could be many reasons we have to change our partitioning scheme:
@@ -107,9 +118,12 @@ c. Rebalancing: There could be many reasons we have to change our partitioning s
     There is a lot of load on a partition, e.g., there are too many requests being handled by the DB partition dedicated to user photos.
 =============================================================================================
 Indexing:
-Indexes are well known when it comes to databases. Sooner or later there comes a time when database performance is no longer satisfactory. One of the very first things you should turn to when that happens is database indexing.
+Indexes are well known when it comes to databases. Sooner or later there comes a time when database performance
+is no longer satisfactory. One of the very first things you should turn to when that happens is database indexing.
 
-The goal of creating an index on a particular table in a database is to make it faster to search through the table and find the row or rows that we want. Indexes can be created using one or more columns of a database table, providing the basis for both rapid random lookups and efficient access of ordered records.
+The goal of creating an index on a particular table in a database is to make it faster to search through the
+table and find the row or rows that we want. Indexes can be created using one
+or more columns of a database table, providing the basis for both rapid random lookups and efficient access of ordered records.
 
 =============================================================================================
 Proxies:
@@ -133,5 +147,89 @@ A reverse proxy retrieves resources on behalf of a client from one or more serve
 These resources are then returned to the client, appearing as if they originated from the proxy server itself
 
 =============================================================================================
-Redundancy and Replication:1
+Redundancy and Replication:
+
+Redundancy is the duplication of critical components or functions of a system with the intention of
+increasing the reliability of the system, usually in the form of a backup or fail-safe, or to
+improve actual system performance. For example, if there is only one copy of a file stored on a single server,
+then losing that server means losing the file. Since losing data is seldom a good thing,
+we can create duplicate or redundant copies of the file to solve this problem.
+
+Replication means sharing information to ensure consistency between redundant resources,
+such as software or hardware components, to improve reliability, fault-tolerance, or accessibility.
+
 =============================================================================================
+Following are the most common types of NoSQL:
+
+Key-Value Stores: Data is stored in an array of key-value pairs. 
+The ‘key’ is an attribute name which is linked to a ‘value’. Well-known key-value stores include Redis, Voldemort, and Dynamo.
+
+Document Databases: In these databases, data is stored in documents (instead of rows and columns in a table)
+and these documents are grouped together in collections. Each document can have an entirely different structure.
+Document databases include the CouchDB and MongoDB.
+
+Wide-Column Databases: Instead of ‘tables,’ in columnar databases we have column families,
+which are containers for rows. Unlike relational databases, we don’t need to know all the columns up
+front and each row doesn’t have to have the same number of columns. Columnar databases are best suited for 
+analyzing large datasets - big names include Cassandra and HBase.
+
+Graph Databases: These databases are used to store data whose relations are best represented in a graph.
+Data is saved in graph structures with nodes (entities), properties (information about the entities),
+and lines (connections between the entities). Examples of graph database include Neo4J and InfiniteGraph.
+
+Querying: SQL databases use SQL (structured query language) for defining and manipulating the data, which is very powerful.
+ In a NoSQL database, queries are focused on a collection of documents. Sometimes it is also called UnQL (Unstructured Query Language).
+ Different databases have different syntax for using UnQL.
+
+Scalability: In most common situations, SQL databases are vertically scalable,
+i.e., by increasing the horsepower (higher Memory, CPU, etc.) of the hardware, which can get very expensive.
+It is possible to scale a relational database across multiple servers, but this is a challenging and time-consuming process.
+
+On the other hand, NoSQL databases are "horizontally scalable", meaning we can add more servers easily 
+in our NoSQL database infrastructure to handle a lot of traffic. Any cheap commodity hardware or cloud
+instances can host NoSQL databases, thus making it a lot more cost-effective than vertical scaling.
+A lot of NoSQL technologies also distribute data across servers automatically.
+
+SQL VS. NoSQL - Which one to use?
+
+When it comes to database technology, there’s no one-size-fits-all solution. 
+That’s why many businesses rely on both relational and non-relational databases for different needs.
+ Even as NoSQL databases are gaining popularity for their speed and scalability,
+ there are still situations where a highly structured SQL database may perform better;
+ choosing the right technology hinges on the use case.
+
+Reasons to use SQL database
+ACID (atomicity, consistency, isolation, and durability) 
+https://searchsqlserver.techtarget.com/definition/ACID
+Here are a few reasons to choose a SQL database:
+
+We need to ensure ACID compliance. ACID compliance reduces anomalies and protects the integrity
+of your database by prescribing exactly how transactions interact with the database. 
+Generally, NoSQL databases sacrifice ACID compliance for scalability and processing speed, 
+but for many e-commerce and financial applications, an ACID-compliant database remains the preferred option.
+
+Your data is structured and unchanging. If your business is not experiencing massive growth 
+that would require more servers and if you’re only working with data that is consistent,
+then there may be no reason to use a system designed to support a variety of data types and high traffic volume.
+
+Reasons to use NoSQL database
+1) Storing large volumes of data that often have little to no structure. 
+2) Making the most of cloud computing and storage.Cloud-based storage is an excellent cost-saving solution
+ but requires data to be easily spread across multiple servers to scale up.
+3)Rapid development. NoSQL is extremely useful for rapid development as it doesn’t need to be prepped ahead of time.
+
+
+=============================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -133,5 +133,5 @@ A reverse proxy retrieves resources on behalf of a client from one or more serve
 These resources are then returned to the client, appearing as if they originated from the proxy server itself
 
 =============================================================================================
-Redundancy and Replication:
+Redundancy and Replication:1
 =============================================================================================

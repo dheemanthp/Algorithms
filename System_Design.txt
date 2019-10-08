@@ -9,7 +9,7 @@ You may have to cover Low level design : Interfaces and classes and their intera
 5) Mangebility : Ease of operation, maintainence , ease of diagnostics ,ease of updates
 6) Vulnerability & security : Identify Security Risks
 7) Concurrency : 
-
+=============================================================================================
 Horizontal vs. Vertical Scaling: 
 Horizontal scaling means that you scale by adding more servers into your pool of resources
 Example: Cassandra and MongoDB
@@ -17,3 +17,121 @@ Example: Cassandra and MongoDB
 whereas Vertical scaling means that you scale by adding more power 
 (CPU, RAM, Storage, etc.) to an existing server.
 Example:Mysql
+=============================================================================================
+Load Balancer (LB) is another critical component of any distributed system. 
+It helps to spread the traffic across a cluster of servers to improve responsiveness 
+and availability of applications, websites or databases
+We can have load balancers at multiple stages , but tyically before Edge server
+
+Advantages:
+1)Users experience faster, uninterrupted service
+2)handle incoming requests while decreasing wait time for users.
+3)Smart load balancers provide benefits like predictive analytics that determine traffic bottlenecks before they happen
+4)System administrators experience fewer failed or stressed components.
+Instead of a single device performing a lot of work, load balancing has several devices perform a little bit of work.
+5)Health Checks - Load balancers perform health checks , and should only forward traffic to “healthy” backend servers.
+
+In Load Balancers we can have redundancy i,.e we can have backup for the load balancers too
+We may call one Load balancer as active , and may be another as passive
+=============================================================================================
+Caching
+CDNs(Content Data Network) are a kind of cache that comes into play for sites serving large amounts of static media.
+In a typical CDN setup, a request will first ask the CDN for a piece of static media; 
+the CDN will serve that content if it has it locally available. If it isn’t available,
+the CDN will query the back-end servers for the file, cache it locally, and serve it to the requesting user.
+
+While caching is fantastic, it does require some maintenance for keeping "cache coherent"
+with the source of truth (e.g., database). If the data is modified in the database, 
+it should be invalidated in the cache; if not, this can cause inconsistent application behavior.
+
+Cache eviction policies
+Following are some of the most common cache eviction policies:
+
+    First In First Out (FIFO): The cache evicts the first block accessed first
+    without any regard to how often or how many times it was accessed before.
+    Last In First Out (LIFO): The cache evicts the block accessed most recently
+    first without any regard to how often or how many times it was accessed before.
+    Least Recently Used (LRU): Discards the least recently used items first.
+    Most Recently Used (MRU): Discards, in contrast to LRU, the most recently used items first.
+    Least Frequently Used (LFU): Counts how often an item is needed.
+    Those that are used least often are discarded first.
+    Random Replacement (RR): Randomly selects a candidate item and discards it to make space when necessary.
+
+=============================================================================================
+Data partitioning
+Data partitioning is a technique to break up a big database (DB) into many smaller parts. 
+It is the process of splitting up a DB/table across multiple machines to improve the manageability, 
+performance, availability, and load balancing of an application. The justification for data partitioning is that,
+after a certain scale point, it is cheaper and more feasible to scale horizontally 
+by adding more machines than to grow it vertically by adding beefier servers.
+
+
+
+a. Horizontal partitioning: In this scheme, we put different rows into different tables.
+Horizontal partitioning is also called as "Data Sharding".
+The key problem with this approach is that if the value whose range is used for partitioning
+ isn’t chosen carefully, then the partitioning scheme will lead to unbalanced servers.
+
+b. Vertical Partitioning: In this scheme, we divide our data to store tables related 
+to a specific feature in their own server. All related Data remain in the same server.
+Vertical partitioning is straightforward to implement and has a low impact on the application
+
+ Directory Based Partitioning: A loosely coupled approach to work around issues mentioned 
+in the above schemes is to create a lookup service which knows your current partitioning scheme
+ and abstracts it away from the DB access code.This loosely coupled approach means we can perform tasks
+like adding servers to the DB pool or changing our partitioning scheme without having an impact on the application.
+
+Partitioning Criteria
+
+a. Key or Hash-based partitioning: Under this scheme, we apply a hash function to some key attributes of the entity we are storing; that yields the partition number. For example, if we have 100 DB servers and our ID is a numeric value that gets incremented by one each time a new record is inserted
+
+b. List partitioning: In this scheme, each partition is assigned a list of values, so whenever we want to insert a new record, we will see which partition contains our key and then store it there. For example, we can decide all users living in Iceland, Norway, Sweden, Finland, or Denmark will be stored in a partition for the Nordic countries.
+
+c. Round-robin partitioning: This is a very simple strategy that ensures uniform data distribution. With ‘n’ partitions, the ‘i’ tuple is assigned to partition (i mod n).
+
+d. Composite partitioning: Under this scheme, we combine any of the above partitioning schemes to devise a new scheme. For example, first applying a list partitioning scheme and then a hash based partitioning. Consistent hashing could be considered a composite of hash and list partitioning where the hash reduces the key space to a size that can be listed.
+
+Common Problems of Data Partitioning
+a. Joins and Denormalization: once a database is partitioned and spread across multiple machines 
+it is often not feasible to perform joins that span database partitions.
+Such joins will not be performance efficient since data has to be compiled from multiple servers.
+ A common workaround for this problem is to denormalize the database so that queries that previously 
+required joins can be performed from a single table. Of course, the service now has to deal with all the perils of denormalization such as data inconsistency.
+
+b. Referential integrity: As we saw that performing a cross-partition query on a partitioned database is not feasible, similarly, trying to enforce data integrity constraints such as foreign keys in a partitioned database can be extremely difficult.
+https://database.guide/what-is-referential-integrity/
+
+c. Rebalancing: There could be many reasons we have to change our partitioning scheme:
+
+    The data distribution is not uniform, e.g., there are a lot of places for a particular ZIP code that cannot fit into one database partition.
+    There is a lot of load on a partition, e.g., there are too many requests being handled by the DB partition dedicated to user photos.
+=============================================================================================
+Indexing:
+Indexes are well known when it comes to databases. Sooner or later there comes a time when database performance is no longer satisfactory. One of the very first things you should turn to when that happens is database indexing.
+
+The goal of creating an index on a particular table in a database is to make it faster to search through the table and find the row or rows that we want. Indexes can be created using one or more columns of a database table, providing the basis for both rapid random lookups and efficient access of ordered records.
+
+=============================================================================================
+Proxies:
+A proxy server is an intermediate server between the client and the back-end server.
+ Clients connect to proxy servers to make a request for a service like a web page, file, connection, etc.
+ In short, a proxy server is a piece of software or hardware that acts as an intermediary 
+for requests from clients seeking resources from other servers.
+
+Advantages:
+1) proxies are used to filter requests, log requests, or sometimes transform requests 
+(by adding/removing headers, encrypting/decrypting, or compressing a resource). 
+2) If multiple clients access a particular resource, the proxy server can cache it 
+and serve it to all the clients without going to the remote server.
+
+Proxies can reside on the client’s local server or anywhere between the client and the remote servers. 
+Here are a few famous types of proxy servers:
+a)Open Proxy
+An open proxy is a proxy server that is accessible by any Internet user.
+b)Reverse Proxy
+A reverse proxy retrieves resources on behalf of a client from one or more servers. 
+These resources are then returned to the client, appearing as if they originated from the proxy server itself
+
+=============================================================================================
+Redundancy and Replication:
+=============================================================================================

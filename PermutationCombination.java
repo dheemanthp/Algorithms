@@ -1,5 +1,6 @@
 
 public class Solution {
+    
     //Running time
     //n* n!
     //Permutation  
@@ -18,8 +19,9 @@ public class Solution {
     //0 to 2^N - 1
     static void combination(String prefix, String s) {
         System.out.println(prefix);
-        for (int i = 0; i < s.length(); i++)
+        for (int i = 0; i < s.length(); i++) {
             combination(prefix + s.charAt(i), s.substring(i + 1));
+        }
     }  
         
     public static void main(String[] args) {

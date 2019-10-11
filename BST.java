@@ -95,6 +95,24 @@ public class Solution {
   }
 
 /*
+ Diameter of a tree
+ O(n^2)
+ This is not an optimized solution , hence below solution is O(n^2)
+ Optimized implementation: The above implementation can be optimized by calculating the height in the same recursion rather than calling a height() separately.
+ Thanks to Amar for suggesting this optimized version. This optimization reduces time complexity to O(n).
+ https://www.geeksforgeeks.org/diameter-of-a-binary-tree/
+*/
+int diameter(Node node) {
+    if(node == null) return 0;
+    int lheight = maxDepth(node.left);
+    int rheight = maxDepth(node.right);
+    int ldiameter = diameter(node.left);
+    int rdiameter = diameter(node.right);
+    int fd = Math.max(lheight+rheight+1, Math.max(ldiameter,rdiameter));
+    return fd;
+}
+
+/*
  Compute the "maxDepth" of a tree -- the number of nodes along
  the longest path from the root node down to the farthest leaf node.
 */
@@ -116,7 +134,7 @@ public class Solution {
 //     Hence the input of [3,2] is not 1 but 2
 //check special case is updated for this purpose
   
-  public int minDepth(TreeNode root) {
+  public int minDepth(Node root) {
         if(root == null) return 0;
         //Special case: If left subtree is NULL, recur for right subtree 
         else if (root.left == null) 
@@ -369,5 +387,14 @@ private void printPaths(Node node, int[] path, int pathLen) {
    //printPaths
    System.out.println("printPaths");
    S.printPaths(S.head); 
+   
+   //Diameter of a tree
+   S.CreateBST(S.head,3);
+   S.CreateBST(S.head,2);
+   S.CreateBST(S.head,1);
+   int diameter = S.diameter(S.head);
+   System.out.println("the diameter is " + diameter);
+   S.LevelOrderTraversal(S.head);
+
    }
 }

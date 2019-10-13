@@ -42,6 +42,23 @@ class Solution {
     
   }*/
 
+   
+ 
+/*Symmetric Tree (Mirror Image of itself)
+ *Given a binary tree, check whether it is a mirror of itself.
+*/   
+    public boolean isSymmetric(TreeNode root) {
+        return isSymmetricHelper(root,root);
+    }    
+    public boolean isSymmetricHelper(TreeNode root1,TreeNode root2) {
+        if(root1 == null && root2 == null) return true;
+        else if(root1 != null && root2 != null && root1.val == root2.val) {
+            return (isSymmetricHelper(root1.left,root2.right) &&
+                    isSymmetricHelper(root1.right,root2.left));
+        } else {
+           return false;
+        }
+    }   
 
 //Non recursive Inorder , returning a Linked List
   LinkedList<Integer> Inorderpractice(Node node) {

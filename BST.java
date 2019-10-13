@@ -94,6 +94,25 @@ public class Solution {
     }
   }
 
+//Symmetric Tree (Mirror Image of itself)
+//Given a binary tree, check whether it is a mirror of itself.  
+//https://www.geeksforgeeks.org/symmetric-tree-tree-which-is-mirror-image-of-itself/
+//Running time O(n)  
+  
+    public boolean isSymmetric(TreeNode root) {
+        return isSymmetricHelper(root,root);
+    }    
+    
+    public boolean isSymmetricHelper(TreeNode root1,TreeNode root2) {
+        if(root1 == null && root2 == null) return true;
+        else if(root1 != null && root2 != null && root1.val == root2.val) {
+            return (isSymmetricHelper(root1.left,root2.right) &&
+                    isSymmetricHelper(root1.right,root2.left));
+        } else {
+           return false;
+        }
+    }  
+  
 /*
  Diameter of a tree
  O(n^2)
@@ -104,10 +123,10 @@ public class Solution {
 */
 int diameter(Node node) {
     if(node == null) return 0;
-    int lheight = maxDepth(node.left);
-    int rheight = maxDepth(node.right);
-    int ldiameter = diameter(node.left);
-    int rdiameter = diameter(node.right);
+    int lheight = maxDepth(node.left);//passing through root
+    int rheight = maxDepth(node.right); //passing through root
+    int ldiameter = diameter(node.left); //recursively check without the root
+    int rdiameter = diameter(node.right); ////recursively check without the root
     int fd = Math.max(lheight+rheight+1, Math.max(ldiameter,rdiameter));
     return fd;
 }

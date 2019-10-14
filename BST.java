@@ -305,6 +305,31 @@ int diameter(Node node) {
  Given a binary tree, prints out all of its root-to-leaf
  paths, one per line. Uses a recursive helper to do the work.
 */
+  
+ public List<List<Integer>> pathSum(Node root, int sum) {
+    List<List<Integer>>ret = new ArrayList<List<Integer>>(); 
+    List<Integer> cur = new ArrayList<Integer>(); 
+    pathSum(root, sum, cur, ret);
+    return ret;
+}
+
+public void pathSum(Node root, int sum, List<Integer>cur, List<List<Integer>>ret){
+    if (root == null){
+        return; 
+    }
+    cur.add(root.val);
+    if (root.left == null && root.right == null && root.data == sum){
+        ret.add(new ArrayList(cur));
+    }else{
+        pathSum(root.left, sum - root.data, cur, ret);
+        pathSum(root.right, sum - root.data, cur, ret);
+    }
+    cur.remove(cur.size()-1);
+  } 
+  
+ //================================================================================= 
+  Alternate Solution
+ //================================================================================== 
 public void printPaths(Node node) {
   int[] path = new int[1000];
   printPaths(node, path, 0);
@@ -315,6 +340,8 @@ public void printPaths(Node node) {
  the path from the root node up to but not including this node,
  prints out all the root-leaf paths.
 */
+  
+  
 /**
  Utility that prints ints from an array on one line.
 */

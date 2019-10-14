@@ -207,8 +207,28 @@ int diameter(Node node) {
  Strategy: subtract the node value from the sum when recurring down,
  and check to see if the sum is 0 when you run out of tree.
 */
+//https://leetcode.com/problems/path-sum/submissions/  
+    public boolean hasPathSum(Node root, int sum) {
+        return hasPathSumHelper(root,sum);
+        }
+    
+    private boolean hasPathSumHelper(Node root,int sum) {
+        if(root == null) {
+            return false;         
+        } 
+        sum = sum - root.data;
+        
+        if (root.left == null & root.right == null && sum == 0) {
+         return true;      
+        }
+        else {
+            System.out.println("the data is:" +root.data +"sum is: "+  sum);
+            return (hasPathSumHelper(root.left,sum) || hasPathSumHelper(root.right,sum));
+        }
+    }  
   
-  boolean hasPathSum(Node node , int sum) {
+//the below code was breaking in Leetcode
+  /*  boolean hasPathSum(Node node , int sum) {
     //base case
     if(node == null) {
      if(sum == 0 ) return true;
@@ -218,7 +238,7 @@ int diameter(Node node) {
     sum = sum-node.data;
       return(hasPathSum(node.left,sum) ||
              hasPathSum(node.right,sum));
-  }
+  }*/
   
   
   /*

@@ -300,11 +300,7 @@ int diameter(Node node) {
     return (isBST(node.left) && isBST(node.right));
       
   }
-  
-/**
- Given a binary tree, prints out all of its root-to-leaf
- paths, one per line. Uses a recursive helper to do the work.
-*/
+
 // Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum.
 //Note: A leaf is a node with no children.
   
@@ -330,9 +326,11 @@ int diameter(Node node) {
       current.remove(current.size()-1); 
     } 
   
- //================================================================================= 
-  Alternate Solution
- //================================================================================== 
+  
+/**
+ Given a binary tree, prints out all of its root-to-leaf
+ paths, one per line. Uses a recursive helper to do the work.
+*/
 public void printPaths(Node node) {
   int[] path = new int[1000];
   printPaths(node, path, 0);

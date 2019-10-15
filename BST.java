@@ -334,6 +334,33 @@ int diameter(Node node) {
  Given a binary tree, prints out all of its root-to-leaf
  paths, one per line. Uses a recursive helper to do the work.
 */
+    public List<String> binaryTreePaths(Node root) {
+        List<String> output = new ArrayList<String>();
+        StringBuffer current = new StringBuffer();
+        binaryTreePathsHelper(root,current,output);
+        return output;
+    }
+    
+    void binaryTreePathsHelper(Node root,StringBuffer current,List<String> output) {
+        if(root == null) return;
+        int length = current.length();//we will have to delete the current element after recursion
+        //so make sure to take the length of the string
+        current.append(root.data);        
+        if(root.left == null && root.right == null) {
+
+            output.add(new String(current.toString()));
+        } else {
+            current.append("->");
+            binaryTreePathsHelper(root.left,current,output);
+            binaryTreePathsHelper(root.right,current,output);
+        }
+        //current.setLength(length);//use this line or below line
+        current.delete(length,current.length());
+    }    
+
+  //===================================================================
+  //Alternative approach below.
+  //===================================================================
 public void printPaths(Node node) {
   int[] path = new int[1000];
   printPaths(node, path, 0);

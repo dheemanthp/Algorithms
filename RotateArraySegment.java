@@ -1,5 +1,38 @@
 import java.io.*;
 import java.util.*;
+//======================================================================================================
+//https://leetcode.com/problems/rotate-array/submissions/
+//Note the case where you have to rotate more than the length the array
+
+class Solution {
+    
+    void reverse(int[] nums, int i ,int j) {
+        if(nums.length == 0) return;
+        while(i < j ) {
+            nums[i] ^= nums[j];
+            nums[j] ^= nums[i];
+            nums[i] ^= nums[j];
+            i++;j--;
+        }
+    }
+    public void rotate(int[] nums, int k) {
+        int length = nums.length;
+        if(nums.length == 0) return;
+        if(k > length) {
+          //for instance 5%3 is 2 , so rotate only 2 times
+           k %= nums.length;
+        }
+        reverse(nums,length-k,length-1);//last 3 numbers
+        reverse(nums,0,length-k-1);//first N-3 numbers
+        reverse(nums,0,length-1);//all numbers
+    }
+}
+//======================================================================================================
+
+
+
+
+
 
 public class RotateArraySegment {
 //Input : {1,2,3,4,5,6,7}

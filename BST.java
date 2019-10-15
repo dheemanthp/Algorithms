@@ -199,6 +199,28 @@ int diameter(Node node) {
     return;
   }
 
+//Sum Root to Leaf Numbers
+//apply DFS(O(n))
+/*  
+Given a binary tree containing digits from 0-9 only, each root-to-leaf path could represent a number.
+An example is the root-to-leaf path 1->2->3 which represents the number 123.
+Find the total sum of all root-to-leaf numbers.
+Note: A leaf is a node with no children. 
+https://leetcode.com/problems/sum-root-to-leaf-numbers/
+*/  
+public int sumNumbers(Node root) {
+	return sum(root, 0);
+}
+
+public int sum(Node n, int sum){
+	if (n == null) return 0;
+    sum = sum*10 + n.data;
+    System.out.println("Sum is " + sum);
+	if (n.right == null && n.left == null) return sum;
+	return (sum(n.left, sum) + sum(n.right, sum));
+  }
+}  
+  
  /*
  Given a tree and a sum, return true if there is a path from the root
  down to a leaf, such that adding up all the values along the path

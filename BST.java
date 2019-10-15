@@ -305,29 +305,30 @@ int diameter(Node node) {
  Given a binary tree, prints out all of its root-to-leaf
  paths, one per line. Uses a recursive helper to do the work.
 */
+// Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum.
+//Note: A leaf is a node with no children.
   
- public List<List<Integer>> pathSum(Node root, int sum) {
-    List<List<Integer>>ret = new ArrayList<List<Integer>>(); 
-    List<Integer> cur = new ArrayList<Integer>(); 
-    pathSum(root, sum, cur, ret);
-    return ret;
-}
+    public List<List<Integer>> pathSum(Node root, int sum) {
+        List<List<Integer>> output = new ArrayList<List<Integer>>();
+        List<Integer> current =  new ArrayList<Integer>();
+        pathSumHelper(root,sum,current,output);
+        return output;
+    }    
 
-public void pathSum(Node root, int sum, List<Integer>cur, List<List<Integer>>ret){
-    if (root == null){
-        return; 
-    }
-    cur.add(root.val);
-    if (root.left == null && root.right == null && root.data == sum){
-        ret.add(new ArrayList(cur));
-    }else{
-        pathSum(root.left, sum - root.data, cur, ret);
-        pathSum(root.right, sum - root.data, cur, ret);
-    }
-  //removes the current element only i.e, if there are 5 elements in ArrayList, 
+    public void pathSumHelper(Node root, int sum,List<Integer> current,List<List<Integer>> output) {
+      if(root == null) return;
+      sum = sum - root.data;
+       current.add(root.data);
+      if(root.left == null && root.right == null && sum == 0) {
+          output.add(new ArrayList(current));
+      } else {
+          pathSumHelper(root.left,sum,current,output);
+          pathSumHelper(root.right,sum,current,output);
+      }
+ //removes the current element only i.e, if there are 5 elements in ArrayList, 
   //it will remove the 5th element only
-    cur.remove(cur.size()-1);
-  } 
+      current.remove(current.size()-1); 
+    } 
   
  //================================================================================= 
   Alternate Solution

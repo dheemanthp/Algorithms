@@ -300,6 +300,46 @@ int diameter(Node node) {
     return (isBST(node.left) && isBST(node.right));
       
   }
+  
+ /*
+ Given the root of a binary tree, each node has a value from 0 to 25 representing the letters 'a' to 'z':
+ a value of 0 represents 'a', a value of 1 represents 'b', and so on.
+ Find the lexicographically smallest string that starts at a leaf of this tree and ends at the root.
+(As a reminder, any shorter prefix of a string is lexicographically smaller: for example, "ab" is lexicographically
+smaller than "aba".  A leaf of a node is a node that has no children.)
+ */
+ //https://leetcode.com/problems/smallest-string-starting-from-leaf/submissions/ 
+ public String smallestFromLeaf(TreeNode root) {
+    //perform DFS
+    return smallestFromLeafHelper(root,"");
+} 
+    
+public String smallestFromLeafHelper(TreeNode root,String suffix) {
+    if(root == null) return suffix;
+    //at every visit , add the character to the right
+    //final solution will have the first character to the right
+    //
+    
+    suffix = (char)('a' + root.val) + suffix;
+    
+    if(root.left == null && root.right==null) {
+        return suffix;
+    }
+    //if the left is null go to right
+    //if the right is null go the left
+    if(root.left == null || root.right == null) {
+        return (root.left == null)? smallestFromLeafHelper(root.right,suffix):
+                                    smallestFromLeafHelper(root.left,suffix); 
+    }
+       //DFS here , keep going to the left
+        String left = smallestFromLeafHelper(root.left,suffix);
+        String right = smallestFromLeafHelper(root.right,suffix);
+
+    
+   return left.compareTo(right) <= 0?left:right;
+
+ }    
+} 
 
 // Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum.
 //Note: A leaf is a node with no children.

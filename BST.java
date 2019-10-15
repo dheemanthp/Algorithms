@@ -199,6 +199,7 @@ int diameter(Node node) {
     return;
   }
 
+
 //Sum Root to Leaf Numbers
 //apply DFS(O(n))
 /*  
@@ -209,6 +210,7 @@ Note: A leaf is a node with no children.
 https://leetcode.com/problems/sum-root-to-leaf-numbers/
 */  
 public int sumNumbers(Node root) {
+	//trick is to send a zero here
 	return sum(root, 0);
 }
 

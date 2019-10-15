@@ -324,6 +324,8 @@ public void pathSum(Node root, int sum, List<Integer>cur, List<List<Integer>>ret
         pathSum(root.left, sum - root.data, cur, ret);
         pathSum(root.right, sum - root.data, cur, ret);
     }
+  //removes the current element only i.e, if there are 5 elements in ArrayList, 
+  //it will remove the 5th element only
     cur.remove(cur.size()-1);
   } 
   

@@ -3,24 +3,33 @@ public class Solution {
 
 //O(n) with extra space of a string builder
     private static String getWordWrap(String s, int k) {
+       //split all words
     	String[] sArr = s.split(" ");
+        //string builder
     	StringBuilder sb = new StringBuilder();
     	int cnt = 0;
+        //check every every word 
     	for(int i=0;i<sArr.length;i++) {
+                //count the length of the string + 1 space
     		cnt += sArr[i].length() + 1;
     		System.out.println("count: " + cnt);
+                //if count is greater than k+1
     		if(cnt > k+1) {
     			if(sb.length() > 0) {
-    			    			System.out.println("Delete: " + sb.toString());
-    				sb.deleteCharAt(sb.length() - 1);
+    			        // Adding a new word will exceed the required length , hence do not add any new words,
+    			        //just trim the space at the end of the already built word, and return
+    			    	System.out.println("Delete: " + sb.toString() + ":at location" + (sb.length() - 1));
+    				    sb.deleteCharAt(sb.length() - 1);
     			}
     			System.out.println("output: " + sb.toString());
     			return sb.toString();
     		}
+                //otherwise append the new string to the string builder
     		sb.append(sArr[i] + " ");
     		System.out.println(sb.toString());
     	}
-    	return s;
+        //just return sb in this case
+    	return sb.toString();
     }
 
     public static void main(String[] args) {

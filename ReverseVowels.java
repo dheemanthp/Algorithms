@@ -1,5 +1,5 @@
 class Solution {
-    
+//https://leetcode.com/problems/reverse-vowels-of-a-string/    
     public String reverseVowels(String str) {
         int i = 0 ;
         int j = str.length() - 1;

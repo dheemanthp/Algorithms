@@ -1,3 +1,8 @@
+//Multi Threading in java: obect level locking(mainly for non static member and non static member functions) by synchronizing using a lock
+//class level locking(for static member and static member function)
+//https://howtodoinjava.com/java/multi-threading/object-vs-class-level-locking/
+
+
 Medium: https://leetcode.com/problems/sum-of-subarray-minimums
 https://leetcode.com/discuss/interview-question/275785/Facebook-or-Phone-screen-or-Count-subsets
 good solution try : https://leetcode.com/playground/8QTQRWXA

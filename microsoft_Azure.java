@@ -99,4 +99,61 @@ public class Solution {
 
     }
 }
+//==============================================================================================================================
+//System Design Question : Logger
+//==============================================================================================================================  
+Class Logger {
+  private final Object lock;
+  private BufferedWriter out;
+  private FileWriter fstream;
+  
+  Logger() {
+    lock = new Object();
+    out = null;
+    fstream = null;
+  }
+  
+  void open(String file) {
+    fstream = new FileWriter(file, true); //true tells to append data.
+    out = new BufferedWriter(fstream);
+    
+    
+  }
+  void write(int[] intArray) {
+    synchronized (lock)
+        {   
+            for(int i : intArray) {
+              //write integer
+              try {
+                out.write(i);
+              } catch (IOException e) {
+                  System.err.println("Error: " + e.getMessage());
+              } 
+            }
+        }
+  }
+  void write(String[] strArray) {
+    synchronized (lock)
+        {
+            for(String str : strArray) {
+              //write String
+              try {
+                out.write(str);
+              } catch (IOException e) {
+                  System.err.println("Error: " + e.getMessage());
+              } 
+            }
+        }
+  }
+  
+  void close {
+        if(out != null) {
+        out.close();
+    }
+  }
+}
+
+
+
+
 

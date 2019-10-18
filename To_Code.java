@@ -1,3 +1,6 @@
+Medium: https://leetcode.com/problems/sum-of-subarray-minimums
+Just finding subarray's is with a formula a[i] *(n-i)+ (i+1)
+
 Easy :https://leetcode.com/problems/verifying-an-alien-dictionary/
 
 1) https://www.geeksforgeeks.org/generate-cyclic-permutations-number/

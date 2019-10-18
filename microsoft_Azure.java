@@ -1,4 +1,5 @@
 public class Solution {
+  //https://leetcode.com/discuss/interview-question/398023/Microsoft-Online-Assessment-Questions
   //https://leetcode.com/discuss/interview-question/334888/microsoft-azure-compute-online-assessment-2019
   //Question1 :Best answer
   //Based on the principle that

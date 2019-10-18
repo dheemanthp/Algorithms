@@ -59,3 +59,43 @@ public class Solution {
       System.out.println("the nth term is " + nthTermModified(15));
     }
 }
+//==============================================================================================================================
+  //Largest MAX PAIR (of negative and positive)
+//find largest positive, negative number in array
+//Also got Min Moves to Make String Without 3 Identical Consecutive Letters, Longest Semi-Alternating Substring
+//==============================================================================================================================  
+  import java.util.*; 
+public class Solution {
+
+  public static int pair(int[] arr) {
+      
+      Set<Integer> S = new HashSet<Integer>();
+      int max = Integer.MIN_VALUE;
+      for(int i =0 ; i < arr.length ; i++) {
+
+          if(S.contains(-1 * arr[i])) {
+             if((-1 * arr[i]) > (arr[i])) {
+                 max =Math.max(max,(-1 * arr[i]));
+                 //System.out.println(arr[i] + " "  + (-1 * arr[i]));
+             } else {
+                 max =Math.max(max,(arr[i]));
+                 //System.out.println((-1 * arr[i]) + " " + arr[i]);
+             }
+              
+          } else {
+              S.add(arr[i]);
+          }
+      }
+      return max;      
+  }
+
+
+    public static void main(String args[]) {
+
+      int[] arr = new int[]{ 4, 8,-10, 9, -4, 1, -1, -8, -9 ,10};
+      int max =  pair(arr);
+      System.out.println("max pair is" + -max + " " + max);
+
+    }
+}
+

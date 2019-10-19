@@ -1,3 +1,6 @@
+//input : 00000000000000000000000000000111
+//output:   11100000000000000000000000000000
+//running time : O(bit sets)
 uint32_t reverseBits(uint32_t n) {
     if(n == 0) return 0;
  uint32_t rev = 0; 
@@ -6,6 +9,7 @@ uint32_t reverseBits(uint32_t n) {
     unsigned int count = sizeof(n) * 8; //count is 32
     while (n > 0) 
     { 
+        printf("the count inside is %d", count);  
         // bitwise left shift  
         // 'rev' by 1 
         rev <<= 1; 
@@ -20,7 +24,7 @@ uint32_t reverseBits(uint32_t n) {
         n >>= 1; 
         count--;      
     } 
-      
+    printf("the count is %d", count);  
     // required number 
     rev <<= count; 
     return rev; 

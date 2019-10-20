@@ -2,6 +2,8 @@
 //class level locking(for static member and static member function)
 //https://howtodoinjava.com/java/multi-threading/object-vs-class-level-locking/
 
+https://www.geeksforgeeks.org/median-of-stream-of-integers-running-integers/
+https://www.youtube.com/watch?v=1CxyVdA_654
 
 Medium: https://leetcode.com/problems/sum-of-subarray-minimums
 https://leetcode.com/discuss/interview-question/275785/Facebook-or-Phone-screen-or-Count-subsets

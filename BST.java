@@ -94,6 +94,10 @@ public class Solution {
     }
   }
 
+	
+//Delete a node in a BST Tree 
+//https://leetcode.com/problems/delete-node-in-a-bst/submissions/ 
+	
     //https://www.youtube.com/watch?v=gcULXE7ViZw
     public static TreeNode findMin(TreeNode root) {
         if(root == null) return null;
@@ -106,7 +110,7 @@ public class Solution {
     }
     
     
-    
+   
     public TreeNode deleteNode(TreeNode root, int key) {
         if(root == null) return null;
         

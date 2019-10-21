@@ -94,6 +94,58 @@ public class Solution {
     }
   }
 
+    //https://www.youtube.com/watch?v=gcULXE7ViZw
+    public static TreeNode findMin(TreeNode root) {
+        if(root == null) return null;
+        else {
+           while (root.left != null) {
+               root = root.left;
+           }
+            return root;
+        }
+    }
+    
+    
+    
+    public TreeNode deleteNode(TreeNode root, int key) {
+        if(root == null) return null;
+        
+        if(key < root.val) { root.left = deleteNode(root.left,key); }
+        else if (key > root.val) { root.right = deleteNode(root.right,key); }
+        else {
+            //3 cases
+            // 1st case: it is a leaf node
+            if(root.left == null && root.right == null) {
+                root = null;
+                //return null;
+            }
+            //2nd case : it has only one child
+            else if(root.left == null) {
+                TreeNode temp = root;
+                root = root.right;
+                temp = null;
+                //return root;
+            }
+            //2nd case : it has only one child
+            else if(root.right == null) {
+                TreeNode temp = root;
+                root= root.left;
+                temp = null;
+                //return root;
+            } else {
+            //3rd case : it has 2 children
+                TreeNode temp = findMin(root.right);
+                root.val = temp.val;
+                root.right = deleteNode(root.right,temp.val);
+                //return root;
+            }
+        }
+        return root;
+        
+        
+    }
+	
+	
 //Symmetric Tree (Mirror Image of itself)
 //Given a binary tree, check whether it is a mirror of itself.  
 //https://www.geeksforgeeks.org/symmetric-tree-tree-which-is-mirror-image-of-itself/

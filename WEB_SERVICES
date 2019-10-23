@@ -1,0 +1,58 @@
+TWITTER API : https://developer.twitter.com/
+
+URL:
+====
+A Uniform Resource Locator (URL) is a URI that specifies the means of acting upon 
+or obtaining the representation of a resource, i.e. specifying both its primary access mechanism 
+and network location. For example, the URL http://example.org/wiki/Main_Page refers to a resource 
+identified as /wiki/Main_Page whose representation, in the form of HTML and related code, 
+is obtainable via the Hypertext Transfer Protocol (http:) from a network host whose domain name is example.org. 
+
+
+SOAP web service - has lot of rules and a specification
+=======================================================================
+
+Methods, handling errors , looking at content types
+
+RESTful Web service 
+https://en.wikipedia.org/wiki/Representational_state_transfer: Check all the HTTP methods
+
+- has no rules and has "no specification" , easy for clients , or easy for consumers
+- It is a concept and set of guide lines , and style of architecture, and representational state transfer
+- All message requests and responses should have the right HEADER
+- HTTP response gets a status code , if http response is successful 200 is returned , Error is 500 , page not found 404 Error
+- In the HTTP response , then HTTP Header contains Content Type :text/xml or application/json . We can also do content Negotiation
+- Resource based URI's https://www.youtube.com/watch?v=NjpKwiRORI4  
+
+W3C has created Standard HTTP methods: Resource(file, video , or image)
+=======================================================================
+- HTTP METHODS: GET - means read or search
+- HTTP METHODS: POST - means create or Insert new resource
+- HTTP METHODS: PUT - means create and then as well as update 
+- HTTP METHODS: DELETE - means remove
+- HTTP METHODS: PATCH - customize update
+
+POST(Not-Idempotent) VS PUT(Idempotent):
+Definition of Idempotent: is a property of some operations such that no matter how many times you execute them, you achieve the same result. 
+
+If the request URL and the response URL are the same , then it is Idempotent , go for PUT , client controlled as the client already knows the ID or resource
+If the request URL and the response URL are not the same , then it is Not Idempotent , for for POST , Server controlled as it may generate a new ID
+
+Resource creation request should be always be done through POST method.
+Updating request /deleting request can be called multiple times safely,should be done through PUT request which is Idempotent
+
+PATCH VS PUT(Idempotent):
+PUT is for full updates , i.e, all attributes
+PATCH is for customized updates, i.e, only specific attributes 
+
+
+
+
+
+
+
+
+                       
+
+
+

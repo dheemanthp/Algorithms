@@ -35,6 +35,8 @@ boolean subArrayWithTargetSum(int arr[] , int size, int target) {
         //if hashMap already has the value, means we already  
         // have subarray with the sum - so stop 
         //System.out.println("check" + (cur_sum - target));//for debugging
+        //this means some elements have eaten up the current sum , and hence if they
+        //were not present , then the sum would have been the target
         if(subArrayMap.containsKey(cur_sum - target)) {
             start = subArrayMap.get(cur_sum - target) + 1; 
             end  = i;

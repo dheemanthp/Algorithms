@@ -22,7 +22,7 @@ The disadvatage of this solution is it is not the most efficient solution.*/
 import java.util.Comparator; 
 class Solution {
     
-      // A custom comparator that compares two Strings by their length.
+      // A custom comparator that compares two integer Array's
         Comparator<int[]> tuppleDistanceComparator = new Comparator<int[]>() {
             @Override
             public int compare(int[] p1, int[] p2) {

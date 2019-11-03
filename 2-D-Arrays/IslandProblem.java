@@ -5,6 +5,8 @@ public class Solution {
 //2) If the cell contains 1 , then visit all it's neighbours(each cell can have 8 neighbours) using DFS
 //3) Once you return from DFS, then increment count because you have found the island
 //Running time O(ROW * COLUMN)
+//https://www.geeksforgeeks.org/find-number-of-islands/
+//https://leetcode.com/problems/number-of-islands/
 
 
   

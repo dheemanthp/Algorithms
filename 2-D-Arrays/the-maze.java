@@ -2,6 +2,34 @@ public class Solution {
     //https://leetcode.com/problems/the-maze/
     //Basic idea is to keep rolling until we hit the WALL
     // once we hit the wall , try to backtrack one step , and store that Cell.
+ /*
+ 
+ In order to implement this, we make use of a queue. 
+ We start with the ball at the startstartstart position. 
+ For every current position, we add all the new positions possible by traversing 
+ in all the four directions(till reaching the wall or boundary) into the queue
+ to act as the new start positions and mark these positions as True in the visited
+ array. When all the directions have been covered up, we remove a position value, 
+ sss, from the front of the queue and again continue the same process with sss 
+ acting as the new start position.
+
+Further, in order to choose the direction of travel, we make use of a dir array, 
+which contains 4 entries. Each entry represents a one-dimensional direction of travel.
+To travel in a particular direction, we keep on adding the particular entry of the 
+dirs array till we hit a wall or a boundary. For a particular start position,
+we do this process of dir addition for all all the four directions possible.
+
+If we hit the destination position at any moment, we return a True directly indicating 
+that the destination position can be reached starting from the start position.
+ 
+ Complexity Analysis
+
+    Time complexity : O(mn). Complete traversal of maze will be done in the worst case. 
+    Here, m and n refers to the number of rows and coloumns of the maze.
+
+    Space complexity : Space complexity : O(mn). visited array of size m∗n is used 
+    and queue size can grow upto m∗n in worst case.
+ */
     public static boolean hasPath(int[][] maze, int[] start, int[] destination) {
         int m = maze.length, n = maze[0].length;
         boolean[][] visited = new boolean[m][n];

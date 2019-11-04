@@ -168,7 +168,51 @@ public class Solution {
            return false;
         }
     }  
-  
+
+/*
+This solution updates the max variable whenever the sum of left subtree and right subtree 
+is greater than the previous max sum. The return statement only keep track of the height of a node. 
+Brilliant solution!
+*/
+
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+//https://leetcode.com/problems/diameter-of-binary-tree/submissions/
+public class Solution {
+    int max = 0;
+    
+    public int diameterOfBinaryTree(TreeNode root) {
+        maxDepth(root);
+        return max;
+    }
+    
+    private int maxDepth(TreeNode root) {
+        if (root == null) return 0;
+        
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
+        //System.out.println(root.val);
+        //System.out.println("the left depth is " + left);
+        //System.out.println("the right depth is " + right);            
+        //tracks height of left subtree + right subtree
+        max = Math.max(max, left + right);
+        //System.out.println("max is " + max); 
+        //System.out.println("returning " + (Math.max(left, right) + 1)); 
+        //track height of tree from a given node
+        return Math.max(left, right) + 1;
+    }
+}
+
+	
+	
 /*
  Diameter of a tree
  O(n^2)

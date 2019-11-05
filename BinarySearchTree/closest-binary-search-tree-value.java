@@ -15,6 +15,7 @@ class Solution {
 }
 
 //Iterative method by doing In order traversal
+//worst case O(n)
 
 class Solution {
     public int closestValue(TreeNode root, double target) {

@@ -410,7 +410,39 @@ public int sum(Node n, int sum){
            sameTree(node1.right, node2.right));
   }    
 
+
 /*
+ *Returns true if a binary tree is a binary search tree.
+ *Send the upper limit value and lower limit value
+ */
+ public boolean helper(TreeNode node, Integer lower, Integer upper) {
+      //if node is null return here
+    if (node == null) return true;
+    
+    // now hold the value here
+    int val = node.val;
+      System.out.println("val " + val + "lower " + lower + " upper " + upper);
+      //if current value is lesser than lower
+    if (lower != null && val <= lower) return false;
+      //if current value is greater than upper
+    if (upper != null && val >= upper) return false;
+
+    if(helper(node.right, val, upper) && helper(node.left, lower, val)) {
+        return true;
+    } else{
+        return false;
+    }
+  }
+
+  public boolean isValidBST(TreeNode root) {
+      //helper function is important here
+    return helper(root, null, null);
+  }
+
+
+/*
+ WARNING : BELOW APPROACH WILL FAIL FOR SOME TREES:
+ DO NOT USE THIS APPROACH
  Returns true if a binary tree is a binary search tree.
 */ 
   boolean isBST(Node node) {

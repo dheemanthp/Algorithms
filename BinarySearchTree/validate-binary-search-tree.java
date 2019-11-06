@@ -1,3 +1,37 @@
+/*Complexity Analysis
+
+    Time complexity : O(N)\mathcal{O}(N)O(N) in the worst case when the tree is BST or the "bad" element is a rightmost leaf.
+
+    Space complexity : O(N)\mathcal{O}(N)O(N) to keep stack.
+*/
+
+
+//In order Traversal
+class Solution {
+  public boolean isValidBST(TreeNode root) {
+    Stack<TreeNode> stack = new Stack();
+    double previous = - Double.MAX_VALUE;
+
+    while (!stack.isEmpty() || root != null) {
+      while (root != null) {
+        stack.push(root);
+        root = root.left;
+      }
+      root = stack.pop();
+      // If next element in inorder traversal
+      // is smaller than the previous one
+      // that's not BST.
+      if (root.val <= previous) return false;
+      previous = root.val;
+      root = root.right;
+    }
+    return true;
+  }
+}
+
+
+
+
 // https://leetcode.com/problems/validate-binary-search-tree/submissions/
 //https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
 /**
@@ -14,21 +48,20 @@
 //When you go left , current node will be max for it
 //when you go right , current node will be min for it.
 
-
-class Solution {
-  public boolean helper(TreeNode node, Integer lower, Integer upper) {
+class SolutionRecursion {
+  public boolean helper(TreeNode node, Integer min, Integer max) {
       //if node is null return here
     if (node == null) return true;
     
     // now hold the value here
-    int val = node.val;
-      System.out.println("val " + val + "lower " + lower + " upper " + upper);
+    int curr = node.val;
+      System.out.println("curr " + curr + "min " + min + " max " + max);
       //if current value is lesser than lower
-    if (lower != null && val <= lower) return false;
-      //if current value is greater than upper
-    if (upper != null && val >= upper) return false;
+    if (min != null && curr <= min) return false;
+      //if current value is greater than max
+    if (max != null && curr >= max) return false;
 
-    if(helper(node.right, val, upper) && helper(node.left, lower, val)) {
+    if( helper(node.left, min, curr) && helper(node.right, curr, max) ) {
         return true;
     } else{
         return false;

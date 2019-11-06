@@ -10,6 +10,11 @@
  * }
  */
 
+//Always remember:
+//When you go left , current node will be max for it
+//when you go right , current node will be min for it.
+
+
 class Solution {
   public boolean helper(TreeNode node, Integer lower, Integer upper) {
       //if node is null return here

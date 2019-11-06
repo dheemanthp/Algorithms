@@ -414,6 +414,8 @@ public int sum(Node n, int sum){
 /*
  *Returns true if a binary tree is a binary search tree.
  *Send the upper limit value and lower limit value
+ *https://leetcode.com/problems/validate-binary-search-tree/submissions/
+ *https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
  */
  public boolean helper(TreeNode node, Integer lower, Integer upper) {
       //if node is null return here

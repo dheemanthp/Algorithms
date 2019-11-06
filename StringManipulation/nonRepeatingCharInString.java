@@ -25,14 +25,14 @@ public class MyClass {
                 min = Math.min(H.get(key),min);
             }
         }
-        return str.charAt(min);
+        //if all are duplicates, then just return -1 or some dabba char
+        if(min != Integer.MAX_VALUE) {
+            return str.charAt(min);
+        } else{
+            return '&';
+        }
     }
     
-    public static void main(String args[]) {
-
-        System.out.println(nonRepeatingCharsInString("geeksforgeeks"));
-    }
-}
 
 
 //====================================================================================================

@@ -1,12 +1,38 @@
-/******************************************************************************
+Using HashMap
+import java.util.*;
 
-                            Online Java Compiler.
-                Code, Compile, Run and Debug java program online.
-Write your code in this editor and press "Run" button to execute it.
+public class MyClass {
+    
+    public static char nonRepeatingCharsInString(String str) {
+        //will store Characters, index
+        //if repeat just make the index value as negative
+        HashMap<Character,Integer> H = new HashMap<>();
+        for (int i = 0 ; i < str.length() ;i ++) 
+        {
+            if(H.containsKey(str.charAt(i))) {
+                H.put(str.charAt(i),-1);
+            } else{
+                H.put(str.charAt(i),i);
+            }
+        }
+        Integer min = Integer.MAX_VALUE;        
+        for(Character key : H.keySet()) {
 
-*******************************************************************************/
+            if(H.get(key) != -1) {
+                min = Math.min(H.get(key),min);
+            }
+        }
+        return str.charAt(min);
+    }
+    
+    public static void main(String args[]) {
+
+        System.out.println(nonRepeatingCharsInString("geeksforgeeks"));
+    }
+}
 
 
+//====================================================================================================
 import java.util.*;
 
 public class Main {

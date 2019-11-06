@@ -2,6 +2,7 @@
 //if the character repeats just put -1
 //if the character does not repeat just add the index value
 //now just get the minimum index value from the hashmap
+//https://www.geeksforgeeks.org/given-a-string-find-its-first-non-repeating-character/
 import java.util.*;
 
 public class MyClass {

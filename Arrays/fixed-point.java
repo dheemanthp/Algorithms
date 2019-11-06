@@ -2,6 +2,8 @@
 
 class Solution {
 //Binary search solution  
+//A[i] < i , go to the right
+//A[i] > i , go to the left    
     public int fixedPoint(int[] A) {
         if(A == null) return -1;
         int len = A.length;

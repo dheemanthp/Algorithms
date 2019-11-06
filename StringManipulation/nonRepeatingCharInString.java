@@ -1,4 +1,7 @@
-Using HashMap
+//Using HashMap
+//if the character repeats just put -1
+//if the character does not repeat just add the index value
+//now just get the minimum index value from the hashmap
 import java.util.*;
 
 public class MyClass {

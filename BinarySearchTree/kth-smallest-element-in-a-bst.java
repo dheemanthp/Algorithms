@@ -38,3 +38,36 @@ class Solution {
         return inorderTraversal(root,k);
     }
 }
+/*
+
+
+What if the BST is modified (insert/delete operations) often and you need to find the kth smallest frequently? 
+How would you optimize the kthSmallest routine?
+
+Insert and delete in a BST were discussed last week, the time complexity of these operations is O(H)\mathcal{O}(H)O(H), 
+where HHH is a height of binary tree, and H=log⁡NH = \log NH=logN for the balanced tree.
+
+Hence without any optimisation insert/delete + search of kth element has O(2H+k)\mathcal{O}(2H + k)O(2H+k) complexity. 
+How to optimise that?
+
+That's a design question, basically we're asked to implement a structure which contains a BST inside and optimises the 
+following operations :
+
+    Insert
+
+    Delete
+
+    Find kth smallest
+
+Seems like a database description, isn't it? Let's use here the same logic as for LRU cache design, and combine an
+indexing structure (we could keep BST here) with a double linked list.
+
+Such a structure would provide:
+
+    O(H)\mathcal{O}(H)O(H) time for the insert and delete.
+
+    O(k)\mathcal{O}(k)O(k) for the search of kth smallest.
+
+*/
+
+

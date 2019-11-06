@@ -8,6 +8,8 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+//Idea is in order traversal , and keep decrementing the count 
+//once the count reaches zero return the node value.
 class Solution {
     public static  int inorderTraversal(TreeNode root, int k) {
         

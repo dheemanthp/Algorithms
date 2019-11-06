@@ -9,6 +9,11 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+//Your input
+//[7,5,12,3,6,8,14,4]
+//[4,3,5,6,7,8,12,14]
+
+
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         

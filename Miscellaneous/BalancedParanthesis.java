@@ -1,5 +1,25 @@
 import java.util.*;
 
+/*
+       //assert obj.removeInvalidParentheses("ab)a(c)fg)a") == "aba(c)fga"
+       //assert obj.removeInvalidParentheses("ab(a(c)fg)9)))") == "ab(a(c)fg)9"
+        //assert obj.removeInvalidParentheses(")a(b)c()(5") == "a(b)c()5"
+        //assert obj.removeInvalidParentheses(")(") == ""
+        //assert obj.removeInvalidParentheses("a(b))") == "a(b)"
+        
+       String input1 =  "ab)a(c)fg)a";
+        System.out.println(removeBracket(input1));
+        String input2 =  "ab(a(c)fg)9)))";
+        //System.out.println(removeBracket(input2));
+        String input3 =  ")a(b)c()(5";
+        //System.out.println(removeBracket(input3));
+        String input4 =  ")(";
+        System.out.println(removeBracket(input4));
+        String input5 =  "a(b))";
+        //System.out.println(removeBracket(input5));
+*/
+
+
 public class Solution {
 //Facebook | Balance Parentheses
 
@@ -88,21 +108,7 @@ public class Solution {
         System.out.println(removeBracket(input4));
         String input5 =  "a(b))";
         //System.out.println(removeBracket(input5));
-
-        
-        //assert obj.removeInvalidParentheses("ab(a(c)fg)9)))") == "ab(a(c)fg)9"
-        //assert obj.removeInvalidParentheses(")a(b)c()(5") == "a(b)c()5"
-        //assert obj.removeInvalidParentheses(")(") == ""
-        //assert obj.removeInvalidParentheses("a(b))") == "a(b)"
-
-        
-        
-        
-        
-        
-        
-        
-        
+       
         
     }
 }

@@ -6,7 +6,7 @@ class Solution {
         if(s.length() == 0) return true;
         
         //When you encounter open braces , Push only closed Braces
-        //when you encounter closed brances , peek stack to check if equal , if yes , the move forward
+        //when you encounter closed brances , peek stack to check if equal , if yes , then move forward
         // if no , then return.
         Stack<Character> C = new Stack<>();
         char prev;

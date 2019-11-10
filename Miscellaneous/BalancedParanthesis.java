@@ -1,3 +1,57 @@
+//https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/
+//Idea is very simple , perform 2 sweeps
+//LEFT TO RIGHT
+//Mark all the unwanted closed braces from Left to right
+//RIGHT TO LEFT
+//Mark all the unwanted open braces from right to left
+//Finally based on the marker , Build the string
+
+
+class Solution {
+     public String minRemoveToMakeValid(String s) {
+       if(s == null) return null;
+    StringBuilder output = new StringBuilder();
+    //Remove array used as Marker to note unwanted Open and Unwanted close brances
+    boolean[] remove = new boolean[s.length()];
+
+    int open = 0;
+    //first parse
+        for (int i = 0; i < s.length(); i++) {
+
+            if (s.charAt(i) == '(') open++;
+            else if(s.charAt(i) == ')'){
+                if(open > 0) open--;
+                //mark the bracket that needs to be removed
+                else remove[i] = true;
+            } else{
+                //valid character
+            } 
+        }       
+    int close = 0;
+    //second parse
+    for(int i=s.length() -1; i >=  0; i--) {
+            if (s.charAt(i) == ')') close++;
+            else if(s.charAt(i) == '('){
+                if(close > 0) close--;
+                //mark the bracket that needs to be removed
+                else remove[i] = true;
+            } else{
+                //valid character
+            } 
+        }       
+
+    //Build String builder, remove all the brackets from remove array
+    for(int i=0; i <= s.length() -1 ; i++) {
+        if(!remove[i]) {
+            output.append(s.charAt(i));
+        }
+    }
+    return output.toString();
+   }
+}
+
+//ALTERNATIVE APPROACH BELOW, but just follow the above approach.
+
 import java.util.*;
 
 /*

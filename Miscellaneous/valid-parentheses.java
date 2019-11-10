@@ -5,7 +5,9 @@ class Solution {
         if(s == null) return false;
         if(s.length() == 0) return true;
         
-        //keep pushing open braces on to the stack until you encounter an closed bracket
+        //When you encounter open braces , Push only closed Braces
+        //when you encounter closed brances , peek stack to check if equal , if yes , the move forward
+        // if no , then return.
         Stack<Character> C = new Stack<>();
         char prev;
         //char[] charArray = s.toCharArray();

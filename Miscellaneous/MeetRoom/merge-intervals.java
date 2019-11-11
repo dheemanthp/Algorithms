@@ -41,7 +41,7 @@ public int[][] merge(int[][] intervals) {
     }
 }
 
-//Compares current tuple with Previous tuple
+//Compares current tuple start time with Previous tuple end time
 class SolutionAlternative {
 public int[][] merge(int[][] intervals) {
 

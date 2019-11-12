@@ -1,5 +1,6 @@
 //Revisit LeetCode as you only did Partial:
 1) https://leetcode.com/problems/friends-of-appropriate-ages/
+2) https://leetcode.com/problems/heaters/ ---> Binary search easy question
 
 
 //Balanced Binary Tree

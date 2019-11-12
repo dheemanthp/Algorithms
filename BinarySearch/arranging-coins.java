@@ -1,6 +1,33 @@
-//https://leetcode.com/problems/arranging-coins/
 
-public class Solution {
+public class Solution{
+public int arrangeCoins(int n) { 
+        //idea is simple , this follows the n*(n+1)/2  = sum approach
+        //given the sum here , find n
+        //you can find n using binary search
+        //convert int to long to prevent integer overflow
+        long sum = (long)n;
+        
+        long start = 0;
+        long end = sum;
+        
+        long mid = 0;
+        
+        while (start <= end){
+            mid = start + (end - start) / 2;
+            
+            if (mid * (mid + 1) <= 2 * sum){
+                start = mid + 1;
+            }else{
+                end = mid - 1;
+            }
+        }
+        
+        return (int)end;//will contain lower value
+    }
+}
+
+
+class SolutionAlternative {
     public int arrangeCoins(int n) {
         
         //remember to typecase it to return integer

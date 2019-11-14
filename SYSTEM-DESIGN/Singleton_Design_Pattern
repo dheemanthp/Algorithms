@@ -3,10 +3,21 @@ https://codepumpkin.com/singleton-design-pattern/#eagerInitialization
 
 1)Eager Initialization - init of instance is done at the time class loading, instance will get created and remain in memory
 which is a waste of memory.
-2)Static Block Initialization - 
+2)Static Block Initialization - similar to eager initialization , except that init of instance is done in a static block,
+with try , catch for exception handling.
 3)Lazy Initialization - instance is created when we call getInstance , but Not thread safe
 
 
+try {
 
+throws();
+
+} catch(Exception e) {
+
+} finally() {
+
+}
+
+//https://www.geeksforgeeks.org/throw-throws-java/
 
 

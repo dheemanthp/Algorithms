@@ -7,6 +7,21 @@ which is a waste of memory.
 with try , catch for exception handling.
 3)Lazy Initialization - instance is created when we call getInstance , but Not thread safe
 
+public class Singleton {
+private static Singleton instance = null;
+
+private Singleton() { //constuctor
+//do nothing here
+}
+
+
+public static Singleton synchronized getInstance() {
+  if(instance == null) {
+    instance = new Singleton();
+  }
+  return instance;
+}
+
 
 try {
 

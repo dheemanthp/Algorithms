@@ -45,8 +45,15 @@ class Solution {
  */
 
 //Always remember:
-//When you go left , current node will be max for it
+//When you go left , current node/root will be max for it
 //when you go right , current node will be min for it.
+/*
+[8,6,10,3,7,9,12]
+                             (8,null,null)
+                   (6,null,8)           (10,8,null)
+           (3,null,6)  (7,6,8)     (9,8,10)  (12,10,null)
+
+*/
 
 class SolutionRecursion {
   public boolean helper(TreeNode node, Integer min, Integer max) {

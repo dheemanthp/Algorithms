@@ -34,7 +34,26 @@ class Solution {
         return ((left != null) ? left : right);
     }
 
-
+BINARY SEARCH TREE:
+====================
+//Time complexity of this solution is O(h) where h is height of tree.
+//Iterative
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if(root == null) return  null;
+        
+        while(root != null) {
+            System.out.println(" the value is" + root.val);
+            if(root.val > p.val && root.val > q.val) root = root.left;
+            else if(root.val < p.val && root.val < q.val) root = root.right;
+            else break;
+        }
+        return root;
+    }
+}    
+BINARY SEARCH TREE:
+====================
+    
 //Time complexity of this solution is O(h) where h is height of tree.
 //Also, the above solution requires O(h) extra space in function call stack for recursive function calls.      
     public static TreeNode lowestCommonAncestorBST(TreeNode root, TreeNode p, TreeNode q) {

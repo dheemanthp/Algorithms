@@ -37,7 +37,7 @@ class Solution {
 BINARY SEARCH TREE:
 ====================
 //Time complexity of this solution is O(h) where h is height of tree.
-//Iterative
+//Iterative no extra space
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if(root == null) return  null;

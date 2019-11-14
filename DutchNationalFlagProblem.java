@@ -21,7 +21,7 @@ import java.util.*;
       input[i] ^= input[j];
 
   }
-    
+   //three indexs low , mid , high 
    static void threewaysort(int[] input) {
    int low = 0; int mid = 0;//mid also starts from beginning index
    int pivot = 1; // this is the middle value among 0 , 1 , 2
@@ -29,10 +29,10 @@ import java.util.*;
    while (mid <= high) {
        //keep swapping 
        if(input[mid] < pivot) { //for 0
-           swap(input,low,mid);
+           swap(input,low,mid);//put zero towards low
            low++;mid++;
        } else if(input[mid] > pivot) { //for 2
-           swap(input,mid,high);
+           swap(input,mid,high);//put high towards mid
            mid++; high --;
        } else { // for 1
            mid++;

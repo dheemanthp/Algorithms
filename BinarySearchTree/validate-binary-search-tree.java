@@ -59,7 +59,7 @@ class SolutionRecursion {
   public boolean helper(TreeNode node, Integer min, Integer max) {
       //if node is null return here
     if (node == null) return true;
-    
+    //otherwise O(n)
     // now hold the value here
     int curr = node.val;
       System.out.println("curr " + curr + "min " + min + " max " + max);

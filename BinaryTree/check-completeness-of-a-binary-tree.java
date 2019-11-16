@@ -1,14 +1,5 @@
-//https://leetcode.com/problems/check-completeness-of-a-binary-tree/
+https://leetcode.com/problems/check-completeness-of-a-binary-tree/
 
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
 /*
 Use BFS to do a level order traversal,
 add childrens to the bfs queue,
@@ -28,7 +19,7 @@ class Solution {
         bfs.offer(root);
         while (bfs.peek() != null) {
             TreeNode node = bfs.poll();
-            System.out.println("the node value is " + node.val + "left is" + node.left + "right is" + node.right);
+            //System.out.println("the node value is " + node.val + "left is" + node.left + "right is" + node.right);
             bfs.offer(node.left);
             bfs.offer(node.right);
         }
@@ -36,19 +27,19 @@ class Solution {
         while (!bfs.isEmpty() && bfs.peek() == null){
             TreeNode node = bfs.poll();
             if(node != null) {
-                System.out.println("the node value is " + node.val);
+                //System.out.println("the node value is " + node.val);
             }
         }
             
         return bfs.isEmpty();
     }
-}
+
 
 //Alternative neat solution , with only one while loop
 //keep adding all children until you encounter a null , use a flag to mark it
 //now if you encounter any more valid nodes, that means it is not a complete binary tree
 
-  public boolean isCompleteTree(TreeNode root) {
+  private boolean isCompleteTreeAlternative(TreeNode root) {
         boolean end = false;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
@@ -63,3 +54,4 @@ class Solution {
         }
         return true;
     }
+}

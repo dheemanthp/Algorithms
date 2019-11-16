@@ -11,6 +11,7 @@ https://leetcode.com/problems/subtree-of-another-tree/
  */
 
 //Logic is to call the isSameTree again and again by going left and right in the main tree
+//since it is binary tree running time is O(n*n)
 
 
 class Solution {

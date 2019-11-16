@@ -9,6 +9,10 @@ https://leetcode.com/problems/subtree-of-another-tree/
  *     TreeNode(int x) { val = x; }
  * }
  */
+
+//Logic is to call the isSameTree again and again by going left and right in the main tree
+
+
 class Solution {
     
         public static boolean isSameTree(TreeNode p, TreeNode q) {

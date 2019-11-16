@@ -44,12 +44,13 @@ class Solution {
         }
     }
     
-    
+    //MAIN FUNCTION
     public Node treeToDoublyList(Node root) {
         if (root == null) return null;
-        helper(root);
-        prev.right = head;
-        head.left = prev;
+        helper(root);//call the helper here
+        head.left = prev;//finally the head should point to previous
+        prev.right = head; //previous should point to head
+        
         return head;
      }
 }

@@ -1,3 +1,9 @@
+Complexity Analysis
+
+Time Complexity: O(N)O(N), where NN is the number of nodes in the tree.
+
+Space Complexity: O(N)O(N).
+   
 //medium problem
 //https://leetcode.com/problems/check-completeness-of-a-binary-tree/
 

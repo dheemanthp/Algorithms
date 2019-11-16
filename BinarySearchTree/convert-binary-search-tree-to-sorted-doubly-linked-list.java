@@ -19,27 +19,28 @@ class Node {
 class Solution {
     //idea is simple
     //do an inorder traversal
+    //
     
     
     //making below static fails in leetcode
     //but individually testing it will work.
     //so leetcode does not like static memebers while doing multiple tests.
-    public  Node prev = null;
-    public  Node head = null;
+    public  Node prev = null; //prev is retained across multiple calls
+    public  Node head = null; //head is retained across multiple calls
     
-
+    //inorder
     public void helper(Node root) {
         if(root != null) {
-            helper(root.left);
+            helper(root.left); //go left
             if(prev == null) {
-                head = root;
+                head = root; //make the head point to the left most node
             } else {
-                prev.right = root;
-                root.left = prev;
+                prev.right = root; //make sure previous points to current
+                root.left = prev; // current points to prev
 
             }
-            prev = root;
-            helper(root.right);
+            prev = root;//keep updating previous to the current
+            helper(root.right);//go right
         }
     }
     

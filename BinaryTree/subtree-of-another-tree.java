@@ -16,6 +16,11 @@ https://leetcode.com/problems/subtree-of-another-tree/
 
 class Solution {
     
+//Time complexity for method isSameTree: O(N), where N is a number of nodes in the tree, since one visits each node exactly once.
+
+//Space complexity for method isSameTree: O(log(N)) in the best case of completely balanced tree and O(N)
+//in the worst case of completely unbalanced tree, to keep a recursion stack
+    
         public static boolean isSameTree(TreeNode p, TreeNode q) {
         
         if(p == null && q == null) return true;
@@ -29,6 +34,8 @@ class Solution {
         }
     }
     
+    //apply subtree by either going left or right
+    //hence final rinning time is O(N*N)
     public boolean isSubtree(TreeNode s, TreeNode t) {
         if(s == null && t == null) return true;
         if (isSameTree(s, t)) return true;

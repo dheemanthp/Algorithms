@@ -1,4 +1,5 @@
-https://leetcode.com/problems/check-completeness-of-a-binary-tree/
+//medium problem
+//https://leetcode.com/problems/check-completeness-of-a-binary-tree/
 
 /*
 Use BFS to do a level order traversal,

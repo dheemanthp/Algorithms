@@ -1,4 +1,5 @@
 https://leetcode.com/problems/goat-latin/
+O(n*n)
 
 class Solution {
     public String toGoatLatin(String S) {

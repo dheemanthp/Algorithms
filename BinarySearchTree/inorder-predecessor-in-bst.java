@@ -13,14 +13,14 @@ https://leetcode.com/problems/inorder-predecessor-in-bst/
 
 //Amazing Solution , iterative without stack
 class Solution {
-public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
+public TreeNode inorderPredecessor(TreeNode root, TreeNode p) {
          TreeNode ret = null;
         while (root != null) {
-            if (root.val <= p.val) {
-                root = root.right;
+            if (root.val >= p.val) {
+                root = root.left;
             } else {
                 ret = root;
-                root = root.left;
+                root = root.right;
             }
         }
         return ret;

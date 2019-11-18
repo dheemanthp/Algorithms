@@ -8,8 +8,6 @@ class Solution {
     public int reverse(int x) {
         int result = 0,prevResult = 0;
         boolean sign = false;
-
-        if(x > Integer.MAX_VALUE || x < Integer.MIN_VALUE) return 0;
         
         if(x < 0 ) {
             sign = true;

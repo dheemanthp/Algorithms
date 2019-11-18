@@ -2,7 +2,7 @@ https://leetcode.com/problems/bulls-and-cows/
 
 //Amazing solution
 //put all the values in 2 arrays , one array will contain characters count for secret,
-another array will contain characters count for guess
+//another array will contain characters count for guess
 
 //Genius solution
 class Solution {

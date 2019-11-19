@@ -1,4 +1,5 @@
 //https://leetcode.com/problems/max-area-of-island/
+O(M*N)
 class Solution {
     
     public int ROW = 0;

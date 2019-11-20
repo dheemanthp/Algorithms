@@ -1,6 +1,6 @@
 https://leetcode.com/problems/rotting-oranges/submissions/
-//BFS solution
-//Eventualy we will modify the grid , from fresh oranges to rotten oranges
+//BFS solution by using MARKER TECHNIQUE
+//MARKER becoz , Eventualy we will modify the grid , from fresh oranges to rotten oranges
 class Solution {
     public int orangesRotting(int[][] grid) {
         if(grid == null || grid.length == 0) return 0;

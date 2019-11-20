@@ -47,6 +47,9 @@ class Solution {
                 }
             }
         }
+        //why count need to be reduce by one?
+        //Because we do count++ every time when queue is not empty. 
+        //When there is no fresh orange, it still does count++ at the begin of the while loop.
         return count_fresh == 0 ? count-1 : -1;
     }
 }

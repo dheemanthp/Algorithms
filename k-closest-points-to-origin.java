@@ -1,6 +1,7 @@
 https://leetcode.com/problems/k-closest-points-to-origin/
 
-//BEST SOLUTION IS USING MAX HEAP
+//INPUT IS 2D array
+//BEST SOLUTION IS USING MAX HEAP 
 //SECOND BEST SOLUTION IS USING TREE MAP , but it cannot store duplicates , hence 
 
 /*II. The second solution is based on the first one. We don't have to sort all points.
@@ -60,6 +61,28 @@ class Solution {
     }
 }
 
+//==========================================================================================================
+class Solution3D {
+    public int[][][] kClosest(int[][][] points, int K) {
+    
+    //USE A MAX heap
+    PriorityQueue<int[]> PQ = new PriorityQueue<int[]>((p1,p2) -> 
+                                                       p2[0] * p2[0] + p2[1] * p2[1] + p2[2] * p2[2]
+                                                       - p1[0] * p1[0] - p1[1] * p1[1]-p1[2] * p1[2]);
+    for(int i = 0; i<points.length ; i++){
+        //keep adding it to MAX heap
+        PQ.offer(points[i][0]);
+        if(PQ.size() > K){
+            PQ.poll();
+        }
+    }
+    int[][][] result  = new int[K][0][3];
+    while(K >0) {
+        result[--K][0] = PQ.poll();
+    }
+        return result;
+}
+}
 
 
 

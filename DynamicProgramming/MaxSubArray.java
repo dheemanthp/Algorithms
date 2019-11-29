@@ -1,5 +1,6 @@
 class Solution {
-    //DP problem
+ //https://leetcode.com/problems/maximum-subarray/
+ //DP problem
 //Idea is very simple. Basically, keep adding each integer to the sequence until the sum drops below 0.
 //If sum is negative, then we should reset the sequence.
 

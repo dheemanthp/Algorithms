@@ -1,3 +1,72 @@
+class Solution {
+    //DP problem
+//Idea is very simple. Basically, keep adding each integer to the sequence until the sum drops below 0.
+//If sum is negative, then we should reset the sequence.
+
+    public int maxSubArray(int[] nums) {
+        
+        //we can track the current sum and max sum
+        int csum = 0;
+        int msum = nums[0];
+        
+        for(int i = 0; i < nums.length; i++) {
+            csum = csum + nums[i];
+            msum = Math.max(csum,msum);
+            System.out.println("csum " +csum + " msum " + msum);
+            if(csum < 0) {
+                csum = 0;
+            }
+        }
+        return msum;
+    }
+}
+
+//example
+//[-2,1,-3,4,-1,2,1,-5,4]
+/*
+csum = -2 , msum  = -2, reset csum to 0
+csum =  1 , msum  = 1,
+csum = -2 , msum  = 1, reset csum to 0
+csum =  4 , msum  = 4,
+csum =  3 , msum  = 4,
+csum =  5 , msum  = 5,
+csum =  6 , msum  = 6,
+csum =  1 , msum  = 6,
+csum =  5 , msum  = 6,
+*/    
+/*
+csum -2 msum -2
+csum 1 msum 1
+csum -2 msum 1
+csum 4 msum 4
+csum 3 msum 4
+csum 5 msum 5
+csum 6 msum 6
+csum 1 msum 6
+csum 5 msum 6
+*/
+
+
+
+
+/*
+Idea is very simple. Basically, keep adding each integer to the sequence until the sum drops below 0.
+If sum is negative, then should reset the sequence.
+
+class Solution {
+public:
+    int maxSubArray(int A[], int n) {
+        int ans=A[0],i,j,sum=0;
+        for(i=0;i<n;i++){
+            sum+=A[i];
+            ans=max(sum,ans);
+            sum=max(sum,0);
+        }
+        return ans;
+    }
+};*/
+
+
 import java.lang.Math;
 
 public class MaxSubArray {

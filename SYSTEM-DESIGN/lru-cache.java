@@ -1,16 +1,27 @@
 //https://leetcode.com/problems/lru-cache/
 class LRUCache {
+    //Node contains key , and value
+    //Node contains left and right
+    class Node{
+      Node left, right;
+      int key, value;
+      Node(int k, int v){
+        key = k;
+        value = v;
+      }
+    }
     
-    final Node head = new Node(0, 0);
-    final Node tail = new Node(0, 0);
+    
+    final Node head = new Node(0, 0);//amazing useful
+    final Node tail = new Node(0, 0);//amazingly useful
     final Map<Integer, Node> map;
     final int capacity;
     
     public LRUCache(int capacity) {
         this.capacity = capacity;
         map = new HashMap(capacity);
-        head.next = tail;
-        tail.prev = head;
+        head.right = tail;
+        tail.left = head;
     }
     
     public int get(int key) {
@@ -33,8 +44,8 @@ class LRUCache {
       } else {
         
         if(map.size() == capacity){
-           map.remove(tail.prev.key); 
-           remove(tail.prev);
+           map.remove(tail.left.key); 
+           remove(tail.left);
         } 
         
         Node n = new Node(key, value);
@@ -44,27 +55,20 @@ class LRUCache {
     }
     
     private void remove(Node n){
-      n.prev.next = n.next;
-      n.next.prev = n.prev;
+      n.left.right = n.right;
+      n.right.left = n.left;
     }
     
     private void insertToHead(Node n){
-      Node headNext = head.next;
-      head.next = n;
-      headNext.prev = n;
-      n.prev = head;
-      n.next = headNext;
+      Node headright = head.right;
+      head.right = n;
+      headright.left = n;
+      n.left = head;
+      n.right = headright;
     }
     
-    class Node{
-      Node prev, next;
-      int key, value;
-      Node(int k, int v){
-        key = k;
-        value = v;
-      }
-    }
 }
+
 
 
 

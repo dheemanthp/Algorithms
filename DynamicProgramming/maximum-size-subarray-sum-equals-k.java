@@ -12,6 +12,31 @@ import java.util.HashMap;
 
 https://www.programcreek.com/2014/10/leetcode-maximum-size-subarray-sum-equals-k-java/
 https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/
+//most readable solution
+//try again
+class Solution {
+public int maxSubArrayLen(int[] nums, int targetSum) {
+    int sum = 0, max = 0;
+    Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+    for (int i = 0; i < nums.length; i++) {
+        sum = sum + nums[i];
+
+        if (sum == targetSum) {
+            max = i + 1;
+        } else if (map.containsKey(sum - targetSum)) {
+            max = Math.max(max, i - map.get(sum - targetSum));
+        }
+
+        if (!map.containsKey(sum)) {
+            map.put(sum, i);
+        }
+    }
+    return max;
+}}
+
+
+
 //did not understand in 1st instance , try again.
 class Solution {
 public int maxSubArrayLen(int[] nums, int k) {

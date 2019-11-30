@@ -6,7 +6,7 @@
 //while you pop , ensure to update the result[top] with delta of top index and current index
 
 //space complexity: O(n)
-//time  complexity: O(n)^2
+//time  complexity: O(n)
 class Solution {
 public int[] dailyTemperatures(int[] temperatures) {
     Stack<Integer> S = new Stack<>();

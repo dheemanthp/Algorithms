@@ -1,3 +1,8 @@
+Bloom Filters - > Probabilistic data structure , it is not for finding exact solution but to rule out things,
+or to narrow down on a solution or closer to accurate solution and not exact solution.
+Skip List -> log(n) for insertion and searching , compared to normal linked list
+XOR Linked List -> is vey memory efficient compared to doubly linked list, as it stores only one address
+
 //Revisit LeetCode as you only did Partial:
 1)https://leetcode.com/problems/max-area-of-island/
 2) https://leetcode.com/problems/friends-of-appropriate-ages/

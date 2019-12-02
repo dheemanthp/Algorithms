@@ -5,6 +5,7 @@
 4) https://leetcode.com/problems/heaters/ ---> Binary search easy question
 5) https://leetcode.com/problems/numbers-with-same-consecutive-differences/ ---> medium
 6) https://leetcode.com/problems/remove-invalid-parentheses/ --> HARD
+7) https://leetcode.com/problems/add-and-search-word-data-structure-design/ --> medium
 
 
 //Balanced Binary Tree

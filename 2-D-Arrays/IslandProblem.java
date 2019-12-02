@@ -8,8 +8,63 @@ public class Solution {
 //https://www.geeksforgeeks.org/find-number-of-islands/
 //https://leetcode.com/problems/number-of-islands/
 
-
   
+  //i got this for FB mock test
+  class Solution {
+    
+    
+    public boolean isSafe(boolean[][] visited,char[][] grid , int i ,int j) {
+        if((i >= 0) &&
+           (i < grid.length) &&
+           (j >= 0) &&
+           (j < grid[0].length) &&
+           (visited[i][j] == false) &&
+           (grid[i][j] == '1')) {
+            return true;
+        } else return false;
+
+    }
+    
+    public void helperDfs(boolean[][] visited,char[][] grid , int i ,int j) {
+        visited[i][j] = true;
+        System.out.println("the index (i,j) " + "(" + i + " " + j + ")");
+        int[] rowcheck = new int[] {0,0,-1,+1};
+        int[] colcheck = new int[] {1,-1,0,0};
+        //check in all 4 directions
+        for ( int k = 0 ; k < 4; k++) {
+            if(isSafe(visited,grid ,i+rowcheck[k],j+colcheck[k]) == true) {
+                
+                helperDfs(visited , grid,i+rowcheck[k],j+colcheck[k]);
+            }
+        }
+                
+    }
+    public int numIslands(char[][] grid) {
+        
+        int row = grid.length;
+        if(row == 0) return 0;
+        int col = grid[0].length;
+        
+        boolean[][] visited = new boolean[row][col];
+        int count = 0;
+        for(int i = 0 ; i < row ; i++) {
+            for(int j = 0 ; j < col ; j++) {
+                if(grid[i][j] == '1' && visited[i][j] == false) {
+                   helperDfs(visited , grid,i,j); 
+                    count++;
+                    System.out.println("the count value is " + count);
+                    
+                }
+            }
+        }
+        return count;
+    }
+}
+  
+  
+  
+
+  =====================================================================================
   static int ROW;
   static int COLUMN;
   

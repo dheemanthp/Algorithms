@@ -26,13 +26,15 @@ class Solution {
         return res;
     }
    
-    private int height(TreeNode node, List<List<Integer>> res){
-        if(node == null) return -1; //there is no tree
-        int level  = Math.max(1 + height(node.left,res),1 + height(node.right,res));//height of every node
-        System.out.println(" the node is " + node.val + " and level is " +  level);
+    private int height(TreeNode root, List<List<Integer>> res){
+        if(root == null) return -1; //there is no tree
+        int level  = Math.max(1 + height(root.left,res),1 + height(root.right,res));//height of every root
+        System.out.println(" the root is " + root.val + " and level is " +  level);
         // the number if arrays should be equal to level + 1
         if(res.size() < level + 1 ) res.add(new ArrayList<>());
-        res.get(level).add(node.val);
+        res.get(level).add(root.val);
+        //Below line can be added if we need to cut the tree (ask the interviewer)
+        //root.left = root.right = null;
         return level;
     }
 

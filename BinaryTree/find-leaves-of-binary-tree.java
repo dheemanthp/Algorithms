@@ -13,16 +13,21 @@
 
 
 
+//Running time is O(n) as you need to visit every node
+The essential of problem is not to find the leaves, but group leaves of same level together 
+and also to cut the tree if needed so ask interviewer. This is the exact role backtracking plays. 
+The helper function returns the level which is the distance from its furthest subtree leaf to root, 
+which helps to identify which group the root belongs to */
+*/
 //height of a tree with one node is zero
 //height of a tree with two node is one , and so on
 //trick is to get the height of the tree
-//Running time is O(n) as you need to visit every node
 
 class Solution {
     public List<List<Integer>> findLeaves(TreeNode root) {
         
         List<List<Integer>> res = new ArrayList<>();
-        int h = height(root,res);
+        int h = height(root,res); //helper function
         System.out.println(" the height is " + h);
         return res;
     }

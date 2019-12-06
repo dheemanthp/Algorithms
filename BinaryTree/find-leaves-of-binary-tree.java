@@ -16,6 +16,7 @@
 //height of a tree with one node is zero
 //height of a tree with two node is one , and so on
 //trick is to get the height of the tree
+//Running time is O(n) as you need to visit every node
 
 class Solution {
     public List<List<Integer>> findLeaves(TreeNode root) {

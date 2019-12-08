@@ -20,6 +20,16 @@ class MinStack {
     // we can use a singly linked list
     Node head;
     Node tail;
+    /*
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin();   --> Returns -3.
+minStack.pop();
+minStack.top();      --> Returns 0.
+minStack.getMin();   --> Returns -2.
+    */
     //H->T
     //H->(-2,-2)->T
     //H->(0,-2)->(-2,-2)->T

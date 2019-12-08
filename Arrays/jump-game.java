@@ -1,5 +1,6 @@
 
 https://leetcode.com/problems/jump-game/
+//running time  O(n)
 
 class Solution {
     public boolean canJump(int[] nums) {

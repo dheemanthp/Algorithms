@@ -13,7 +13,7 @@ class Solution {
     
     for(i=n-2;i>=0;i--){
         System.out.print(" the current value " + A[i] + " and index value is " + i + " total " + (A[i]+i));
-        System.out.println(" the last value is " + last);
+        System.out.println(" the last(index) is " + last);
         //idea is simple 
         //the last but one element and it's index value should be greater than or equal to the next element's index
         //in the failure case ,
@@ -27,10 +27,10 @@ class Solution {
         
         if(i+A[i]>=last) {
             last=i;// keep storing the current index , for next comparision
-            System.out.println(" the last value changed " + last);
+            System.out.println(" the last(index) changed " + last);
         }
     }
-        // expectation is last will be equal to or less than zero
+        // expectation is last(index) will be equal to zero
         
         if(last == 0) {
             return true;
@@ -43,22 +43,21 @@ class Solution {
 /*
 
 [2,3,1,1,4]
- the current value 1 and index value is 3 total 4 the last value is 4
- the last value changed 3
- the current value 1 and index value is 2 total 3 the last value is 3
- the last value changed 2
- the current value 3 and index value is 1 total 4 the last value is 2
- the last value changed 1
- the current value 2 and index value is 0 total 2 the last value is 1
- the last value changed 0
-
+ the current value 1 and index value is 3 total 4 the last(index) is 4
+ the last(index) changed 3
+ the current value 1 and index value is 2 total 3 the last(index) is 3
+ the last(index) changed 2
+ the current value 3 and index value is 1 total 4 the last(index) is 2
+ the last(index) changed 1
+ the current value 2 and index value is 0 total 2 the last(index) is 1
+ the last(index) changed 0
 */
 
 
 /*
 [3,2,1,0,5]
-the current value 0 and index value is 3 total 3 the last value is 4
-the current value 1 and index value is 2 total 3 the last value is 4
-the current value 2 and index value is 1 total 3 the last value is 4
-the current value 3 and index value is 0 total 3 the last value is 4
+ the current value 0 and index value is 3 total 3 the last(index) is 4
+ the current value 1 and index value is 2 total 3 the last(index) is 4
+ the current value 2 and index value is 1 total 3 the last(index) is 4
+ the current value 3 and index value is 0 total 3 the last(index) is 4
 */

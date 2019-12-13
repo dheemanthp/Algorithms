@@ -1,4 +1,5 @@
-fibonacci series
+//fibonacci series
+https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
 
 //recursion
 public class MyClass {
@@ -15,7 +16,7 @@ public class MyClass {
         
      int a = 1;
      int b = 1;
-     if(n == 0) return a;
+     if(n == 0) return 0;
      if(n == 1) return b;
      for(int i = 2; i <= n ; i++) {
          int c = a+b;

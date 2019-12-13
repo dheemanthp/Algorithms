@@ -3,6 +3,8 @@ or to narrow down on a solution or closer to accurate solution and not exact sol
 Skip List -> log(n) for insertion and searching , compared to normal linked list
 XOR Linked List -> is vey memory efficient compared to doubly linked list, as it stores only one address
 
+//Must do for a beginner:
+https://leetcode.com/discuss/career/447900/must-do-questions-for-a-beginner
 //Revisit LeetCode as you only did Partial:
 1)https://leetcode.com/problems/max-area-of-island/
 2) https://leetcode.com/problems/friends-of-appropriate-ages/

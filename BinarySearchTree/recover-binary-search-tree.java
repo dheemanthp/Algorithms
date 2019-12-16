@@ -18,7 +18,7 @@ class Solution {
         // we can also do this with inorder traversal without recursion and without stack using MORRIS TRAVERSAL
         https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion-and-without-stack/
         //IDEA OF MORRIS TRAVERSAL IS SIMPLE , MAKE THE CURRENT NODE AS THE RIGHT CHILD OF THE INORDER PREDECESSOR
-        //this is not intutive
+        //this is not intutive , hence going with stack solution
            
               
 

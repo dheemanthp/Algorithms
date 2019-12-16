@@ -10,7 +10,7 @@ class Solution {
 
              if(map.containsKey(target-nums[i])) {
                  output[0] = map.get(target-nums[i]);
-                 output[1] = i;
+                 output[1] = nums[i];
                  return output;
              } else {
                 map.put(nums[i],i);

@@ -15,7 +15,8 @@ class Solution {
         if(root == null) return;
         
         //current solution is using inorder Traversal iteratively with STACK , SOLUTION IS O(N) for both space and time
-        // we can also do this with inorder traversal without recursion and without stack using MORRIS TRAVERSAL
+        // we can also do this with inorder traversal without recursion and without stack using MORRIS TRAVERSAL ,
+        //and it is LOG(N) , but modifies the tree little and then rectifies it again.
         https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion-and-without-stack/
         //IDEA OF MORRIS TRAVERSAL IS SIMPLE , MAKE THE CURRENT NODE AS THE RIGHT CHILD OF THE INORDER PREDECESSOR
         //this is not intutive , hence going with stack solution

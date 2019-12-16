@@ -1,6 +1,6 @@
 
 https://leetcode.com/problems/custom-sort-string/
-//basically find the intersection , and add it to string builder
+//basically find the intersection of two strings, and add it to string builder
 //and finally append what ever is not intersecting in second string T to string builder
 
 

@@ -17,6 +17,12 @@ class Solution {
         //current solution is using inorder Traversal iteratively with STACK
         // we can also do this with inorder traversal without recursion and without stack using MORRIS TRAVERSAL
         https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion-and-without-stack/
+        //IDEA OF MORRIS TRAVERSAL IS SIMPLE , MAKE THE CURRENT NODE AS THE RIGHT CHILD OF THE INORDER PREDECESSOR
+        //this is not intutive
+           
+              
+
+
         
         //find the first element and the second element which is out of order and swap both
 //How do we find these two elements? For example, we have the following tree that is printed as in order traversal:

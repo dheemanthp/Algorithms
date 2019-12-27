@@ -11,9 +11,12 @@ Check thushar's video
 
 Code in Java:
 */
+//Running time is pesudo polynomial
+//space is O(amount)
 
-//[7,2,3,6]
-//13
+//[7,2,3,6] coin amount
+//13 //total value
+//output is 7+6 = 13 , hence 2 coins
 public class Solution {
 public static int coinChange(int[] coins, int amount) {
 	if (coins == null || coins.length == 0 || amount <= 0)

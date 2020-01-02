@@ -7,6 +7,10 @@ https://leetcode.com/problems/game-of-life/
 //  2 : live to dead//now these are new modified states
 //  3 : dead to live//now these are new modified states
 
+//idea is simple
+//modify the board to contain 2 and 3 values , based on the conditions
+//finally use MOD by 2 operator to convert it back to 0 and 1 configuration.
+
 public class Solution {
 int[][] dir ={{1,-1},{1,0},{1,1},{0,-1},{0,1},{-1,-1},{-1,0},{-1,1}};
 public void gameOfLife(int[][] board) {

@@ -10,6 +10,21 @@ https://leetcode.com/problems/binary-tree-tilt/
  *     TreeNode(int x) { val = x; }
  * }
  */
+/*
+/*
+From the problem statement, it is clear that we need to find the tilt value at every 
+node of the given tree and add up all the tilt values to obtain the final result. 
+To find the tilt value at any node, we need to subtract the sum of all the nodes in 
+its left subtree and the sum of all the nodes in its right subtree.
+
+Thus, to find the solution, we make use of a recursive function traverse which when 
+called from any node, returns the sum of the nodes below the current node including itself. 
+With the help of such sum values for the right and left subchild of any node, 
+we can directly obtain the tilt value corresponding to that node.
+*/
+
+
+*/
 public class Solution {
     //result is global
     int result = 0;

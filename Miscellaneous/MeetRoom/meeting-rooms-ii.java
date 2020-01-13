@@ -1,5 +1,11 @@
 //https://leetcode.com/problems/meeting-rooms-ii/submissions/
 
+    //logic 
+    //sort the tupples based on start time
+    //create a priority queue (PQ)to store end time
+    //Invariant is the if the next start time is greater than the peeked end time , then remove the end time from the PQ
+    //finally the size of PQ will give the minimum number of meeting rooms needed
+
 class Solution {
     //Using Priority QUEUE
     //used lambda comparator to sort tupples by start time.

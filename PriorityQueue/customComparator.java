@@ -2,8 +2,10 @@
 class Solution {
     
     //Using Priority QUEUE
-    //used lambda comparator to sort tupples by start time.
     //methods used are peek(), poll() , add()
+    //for a MAX PQ only we will use custom comparator
+    //for MIN PQ see this https://coderanch.com/t/608503/java/comparator-sort-priority-queue
+    //by default PQ is MIN PQ
     
     
     class The_Comparator implements Comparator<Integer> { 

@@ -9,7 +9,8 @@ public class Leet442 {
         int val = 7;
         int i = 2;
         boolean isNotPrime = false;
-        while(i <= val/2) {
+        int root = (int)Math.sqrt(val);
+        while(i <= root) {
             if(val%i == 0) {
                 isNotPrime = true;
                 break;

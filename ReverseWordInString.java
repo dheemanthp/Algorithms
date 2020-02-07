@@ -1,3 +1,43 @@
+//import java.util.Arrays;
+
+class Solution {
+    //https://leetcode.com/problems/reverse-words-in-a-string/
+    public String swap(char[] word, int i , int j){
+        while (i < j) {
+            word[i] ^= word[j];
+            word[j] ^= word[i];
+            word[i] ^= word[j];
+            i++;
+            j--;
+        }
+        return new String(word);
+    }
+    
+    public String reverseWords(String s) {
+        //create a string builder
+        StringBuilder SB = new StringBuilder();
+        //split the words
+        String[] words = s.trim().split(" ");
+        //for each of the word
+        for(String word : words) {
+            //trim it in order to avoid any empty spaces
+            if(!word.trim().isEmpty()) {
+                //convert the word in chararray
+                char[] ch = word.toCharArray();
+                //the returned string is appended to SB
+                SB.append(swap(ch,0,ch.length-1) + " ");
+                System.out.println(SB.toString());
+            }
+        }
+        //finally the whole sentence can be reversed 
+        String output = SB.toString().trim();
+        //swapped sentence
+        String sentence = swap(output.toCharArray(),0,output.length()-1);
+        return sentence;
+    }
+}
+
+
 class Solution {
     //https://leetcode.com/problems/reverse-words-in-a-string/submissions/
     public static void swap(char[] ch,int i,int j) {

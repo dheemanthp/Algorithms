@@ -1,7 +1,10 @@
 //import java.util.Arrays;
 
+//Input:  ["t","h","e"," ","s","k","y"," ","i","s"," ","b","l","u","e"]
+//Output: ["b","l","u","e"," ","i","s"," ","s","k","y"," ","t","h","e"]
+
 class Solution {
-    //https://leetcode.com/problems/reverse-words-in-a-string/
+    https://leetcode.com/problems/reverse-words-in-a-string-ii/
     public void swap(char[] word, int i , int j){
         while (i < j) {
             word[i] ^= word[j];

@@ -1,9 +1,20 @@
-
-
+/*
+remainingtarget 7 startIndex 0
+remainingtarget 5 startIndex 0
+remainingtarget 3 startIndex 0
+remainingtarget 1 startIndex 0
+remainingtarget 0 startIndex 1
+ the list is [2, 2, 3]
+remainingtarget 2 startIndex 1
+remainingtarget 4 startIndex 1
+remainingtarget 1 startIndex 1
+remainingtarget 1 startIndex 2
+remainingtarget 0 startIndex 3
+ the list is [7]
+*/
 
 class Solution {
     public List<List<Integer>> combinationSum(int[] nums, int target) {
-
         //https://leetcode.com/problems/combination-sum/
         //Use Depth First Search
         //https://www.youtube.com/watch?v=irFtGMLbf-s
@@ -60,3 +71,5 @@ class Solution {
         }
     }
 }
+
+

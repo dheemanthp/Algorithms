@@ -88,3 +88,42 @@ class Solution {
         }
     }
 }
+/*
+remainingtarget 7 startIndex 0
+adding 2
+remainingtarget 5 startIndex 0
+adding 2
+remainingtarget 3 startIndex 0
+adding 2
+remainingtarget 1 startIndex 0
+ Breaking out , as adding 2 causes the remaining target to become negative 
+remove 2 remaining target is 3
+adding 3
+remainingtarget 0 startIndex 1
+ the list is [2, 2, 3]
+remove 3 remaining target is 3
+ Breaking out , as adding 6 causes the remaining target to become negative 
+remove 2 remaining target is 5
+adding 3
+remainingtarget 2 startIndex 1
+ Breaking out , as adding 3 causes the remaining target to become negative 
+remove 3 remaining target is 5
+ Breaking out , as adding 6 causes the remaining target to become negative 
+remove 2 remaining target is 7
+adding 3
+remainingtarget 4 startIndex 1
+adding 3
+remainingtarget 1 startIndex 1
+ Breaking out , as adding 3 causes the remaining target to become negative 
+remove 3 remaining target is 4
+ Breaking out , as adding 6 causes the remaining target to become negative 
+remove 3 remaining target is 7
+adding 6
+remainingtarget 1 startIndex 2
+ Breaking out , as adding 6 causes the remaining target to become negative 
+remove 6 remaining target is 7
+adding 7
+remainingtarget 0 startIndex 3
+ the list is [7]
+remove 7 remaining target is 7
+*/

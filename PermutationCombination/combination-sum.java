@@ -1,3 +1,17 @@
+/*Input
+Array [2,3,6,7]
+target 7
+*/
+/*Output
+A solution set is:
+[
+  [7],
+  [2,2,3]
+]
+*/
+
+
+
 /*
 remainingtarget 7 startIndex 0
 remainingtarget 5 startIndex 0

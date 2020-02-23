@@ -29,7 +29,7 @@ remainingtarget 0 startIndex 3
 
 class Solution {
     public List<List<Integer>> combinationSum(int[] nums, int target) {
-        //https://leetcode.com/problems/combination-sum/
+
         //Use Depth First Search
         //https://www.youtube.com/watch?v=irFtGMLbf-s
         //List of Lists which is the result
@@ -71,19 +71,20 @@ class Solution {
                 //given that nums is sorted , if you find an element which is greater than "remainingtarget", then "remainingtarget" will become negative
                 //hence breakout
                 if(nums[i] > remainingtarget) {
+                    System.out.println(" Breaking out , as adding " + nums[i] + " causes the remaining target to become negative ");
                     break;
                 }
                 
                 //System.out.println("the remainingtarget is " + remainingtarget + " element is " + nums[i]);
                 //add one element at a time to templist
+                System.out.println("adding " + nums[i]);
                 tempList.add(nums[i]);
                 //recursively call delta of target and current element , and the index
                 backtrack(list, nums, tempList, remainingtarget - nums[i],i); // not i + 1 because we can reuse same elements
                 //from the temporary list remove the last item from the current combination
+                System.out.println("remove " + tempList.get(tempList.size() - 1) + " remaining target is " + remainingtarget);
                 tempList.remove(tempList.size() - 1);
             }
         }
     }
 }
-
-

@@ -1,5 +1,7 @@
 
 https://leetcode.com/problems/subsets/
+//[1,2,3]
+//[[],[1],[1,2],[1,2,3],[1,3],[2],[2,3],[3]]
 
 class Solution {
     public List<List<Integer>> subsets(int[] nums) {

@@ -1,5 +1,6 @@
 
 https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
+https://www.geeksforgeeks.org/connected-components-in-an-undirected-graph/
 
 /*n: the number of nodes.
 m: the number of edges (assume no duplicated edges)

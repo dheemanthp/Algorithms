@@ -1,5 +1,6 @@
 
 //https://leetcode.com/problems/circular-array-loop/
+//worst case n^2
 
 class Solution {
     public boolean circularArrayLoop(int[] nums) {

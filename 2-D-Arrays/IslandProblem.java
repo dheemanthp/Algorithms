@@ -1,3 +1,102 @@
+//There are 2 solutions that are possible 
+//1) Recursive approach but using an extra 2D array for storing visited
+//2) Recursive approach without using an  extra visited 2D array by marking the existing array
+
+//Approach 1
+class Solution {
+    //time complexity DFS --> O(mxn)
+    void dfs (char[][] grid,boolean[][] visited, int i , int j) {
+        //validity check
+        if(i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || visited[i][j] == true || grid[i][j] == '0') return;
+            //mark it
+            //System.out.println("Mark (" + i + "," + j + ")");
+            visited[i][j] = true;
+            //go all 4 directions
+            dfs (grid, visited, i-1, j);
+            dfs (grid, visited, i+1, j);
+            dfs (grid, visited, i, j-1);
+            dfs (grid, visited, i, j+1);
+        
+            //8 directions
+            /*
+            dfs (grid, visited, i-1, j-1);
+            dfs (grid, visited, i-1, j+1);
+            dfs (grid, visited, i+1, j-1);
+            dfs (grid, visited, i+1, j+1);
+            dfs (grid, visited, i, j+1);
+            dfs (grid, visited, i, j-1);
+            dfs (grid, visited, i+1, j);
+            dfs (grid, visited, i-1, j);
+            */
+    }
+    
+    
+    
+    public int numIslands(char[][] grid) {
+    //check for null case and 0 rows
+    if(grid == null || grid.length == 0) return 0;
+    int row = grid.length;
+    int col = grid[0].length;
+    
+    //visited
+    boolean[][] visited = new boolean[row][col];
+    //output
+    int island = 0;
+    //go over the 2D array
+    for( int i = 0; i < row; i++) {
+        for( int j = 0; j < col; j++) {
+            //only if you find "1" check for an island
+            if(visited[i][j] == false && grid[i][j] == '1') {
+                dfs(grid, visited, i, j);
+                island++;
+            }
+        }
+    }
+      return island;  
+    }
+}
+
+//Approach 2
+class Solution2 {
+    //time complexity DFS --> O(mxn)
+    void dfs (char[][] grid, int i , int j) {
+        //validity check
+        if(i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] == '0') return;
+            //mark it
+            //System.out.println("Mark (" + i + "," + j + ")");            
+            grid[i][j] = '0';
+            //go all 4 directions
+            dfs (grid, i-1, j);
+            dfs (grid, i+1, j);
+            dfs (grid, i, j-1);
+            dfs (grid, i, j+1);
+    }
+    
+    
+    
+    public int numIslands(char[][] grid) {
+    //check for null case and 0 rows
+    if(grid == null || grid.length == 0) return 0;
+    int row = grid.length;
+    int col = grid[0].length;
+    
+    //output
+    int island = 0;
+    //go over the 2D array
+    for( int i = 0; i < row; i++) {
+        for( int j = 0; j < col; j++) {
+            //only if you find "1" check for an island
+            if(grid[i][j] == '1') {
+                dfs(grid,i,j);
+                island++;
+            }
+        }
+    }
+      return island;  
+    }
+}
+
+
 public class Solution {
 
 //Concept is simple

@@ -37,5 +37,12 @@ System Design - Facebook NewsFeed
 https://leetcode.com/problems/find-largest-value-in-each-tree-row/
 ```
 
+## Date : April-12th-2020
+```
+System Design - 
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+```
+
 
 

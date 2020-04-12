@@ -18,8 +18,14 @@ https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 4) TODO: i know logic -> https://leetcode.com/problems/reorganize-string/ 
 
 ***Date : April-6th-2020***
-System Design
-All Tree questions 
+System Design - Movie Ticketing System
+
+
+***Date : April-11th-2020***
+System Design - Facebook NewsFeed
+https://leetcode.com/problems/find-largest-value-in-each-tree-row/
+
+
 
 ```
 

@@ -42,6 +42,9 @@ https://leetcode.com/problems/find-largest-value-in-each-tree-row/
 System Design - 
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 Logic Is simple : Find the min , then try to find the max delta
+https://leetcode.com/problems/add-strings/
+https://leetcode.com/problems/multiply-strings/
+
 
 ```
 

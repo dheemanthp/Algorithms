@@ -43,13 +43,14 @@ System Design -
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 Logic Is simple : Find the min , then try to find the max delta
 https://leetcode.com/problems/add-strings/
-https://leetcode.com/problems/multiply-strings/
+https://leetcode.com/problems/multiply-strings/ --- Backfill
 
 
 ```
 ## Date : April-13th-2020
 ```
 System Design - 
+https://leetcode.com/problems/diagonal-traverse/ --> Useless
 https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 ```
 

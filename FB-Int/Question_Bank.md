@@ -53,5 +53,13 @@ System Design -
 https://leetcode.com/problems/diagonal-traverse/ --> Useless
 https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 ```
+## Date : April-14th-2020
+```
+System Design - Design Twitter Search
+```
+## Date : April-15th-2020
+```
+System Design - Dropbox
+```
 
 

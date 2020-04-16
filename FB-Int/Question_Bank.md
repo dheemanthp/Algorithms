@@ -59,10 +59,16 @@ System Design - Design Twitter Search
 ```
 ## Date : April-15th-2020
 ```
-System Design - Dropbox
+System Design - 
 https://leetcode.com/problems/verifying-an-alien-dictionary/
 https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/
 https://leetcode.com/problems/backspace-string-compare/
 ```
+## Date : April-15th-2020
+```
+System Design - Dropbox
+https://leetcode.com/problems/pascals-triangle/
+```
+
 
 

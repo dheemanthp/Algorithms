@@ -1,5 +1,16 @@
 
 //https://leetcode.com/problems/pascals-triangle-ii/
+/*
+input : 3
+output below:
+[1, 0, 0, 0]
+[1, 1, 0, 0]
+[1, 2, 1, 0]
+[1, 3, 3, 1]
+
+
+*/
+
 class Solution {
     public List<Integer> getRow(int rowIndex) {
         

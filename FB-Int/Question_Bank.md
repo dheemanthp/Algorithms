@@ -66,10 +66,14 @@ https://leetcode.com/problems/backspace-string-compare/
 ```
 ## Date : April-16th-2020
 ```
-System Design - Dropbox
+System Design - Dropbox - [https://chartio.com/learn/databases/how-does-indexing-work/]
 https://leetcode.com/problems/pascals-triangle/
 https://leetcode.com/problems/pascals-triangle-ii/
 https://leetcode.com/problems/valid-anagram/
+```
+## Date : April-17th-2020
+```
+System Design - 
 ```
 
 

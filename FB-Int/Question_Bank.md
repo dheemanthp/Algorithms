@@ -74,7 +74,7 @@ https://leetcode.com/problems/valid-anagram/
 ## Date : April-17th-2020
 ```
 System Design - TINY URL
-https://www.youtube.com/watch?v=JEiIIjX10zE
+BEST FOR CONSISTENT HASHING - https://www.youtube.com/watch?v=JEiIIjX10zE
 ```
 
 

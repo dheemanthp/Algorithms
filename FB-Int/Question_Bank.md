@@ -76,6 +76,15 @@ https://leetcode.com/problems/valid-anagram/
 System Design - TINY URL
 BEST FOR CONSISTENT HASHING - https://www.youtube.com/watch?v=JEiIIjX10zE
 ```
+## Date : April-21st-2020
+```
+System Design -
+https://leetcode.com/problems/maximum-subarray/
+https://leetcode.com/problems/single-number/
+https://leetcode.com/problems/happy-number/
+https://leetcode.com/problems/is-graph-bipartite/
+
+```
 
 
 

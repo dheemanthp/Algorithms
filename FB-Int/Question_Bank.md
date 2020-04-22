@@ -82,7 +82,7 @@ System Design -
 https://leetcode.com/problems/maximum-subarray/
 https://leetcode.com/problems/single-number/
 https://leetcode.com/problems/happy-number/
-https://leetcode.com/problems/is-graph-bipartite/
+https://leetcode.com/problems/is-graph-bipartite/ ---> you did well, Go over once more
 
 ```
 

@@ -85,6 +85,13 @@ https://leetcode.com/problems/happy-number/
 https://leetcode.com/problems/is-graph-bipartite/ ---> you did well, Go over once more
 
 ```
+## Date : April-22nd-2020
+```
+System Design -
+https://leetcode.com/problems/subarray-sum-equals-k/
+```
+
+
 
 
 

@@ -97,6 +97,7 @@ Counting elements - https://leetcode.com/explore/challenge/card/30-day-leetcodin
 System Design -
 https://leetcode.com/problems/bitwise-and-of-numbers-range/
 https://leetcode.com/problems/middle-of-the-linked-list/
+https://leetcode.com/problems/verifying-an-alien-dictionary/
 
 ```
 

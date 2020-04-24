@@ -98,6 +98,11 @@ System Design -A pair of questions like "Design a system to handle bounced email
 https://leetcode.com/problems/bitwise-and-of-numbers-range/
 https://leetcode.com/problems/middle-of-the-linked-list/
 https://leetcode.com/problems/verifying-an-alien-dictionary/
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock/ -> 
+If you were only permitted to complete at most one transaction 
+(i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit.
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/ -> it is a joke
+
 
 ```
 

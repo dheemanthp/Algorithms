@@ -94,7 +94,7 @@ Counting elements - https://leetcode.com/explore/challenge/card/30-day-leetcodin
 ```
 ## Date : April-23rd-2020
 ```
-System Design -
+System Design -A pair of questions like "Design a system to handle bounced emails" and "Design a system that can do analytics for page views".
 https://leetcode.com/problems/bitwise-and-of-numbers-range/
 https://leetcode.com/problems/middle-of-the-linked-list/
 https://leetcode.com/problems/verifying-an-alien-dictionary/

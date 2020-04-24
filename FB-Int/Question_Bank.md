@@ -92,6 +92,15 @@ https://leetcode.com/problems/subarray-sum-equals-k/
 https://leetcode.com/problems/two-sum-iv-input-is-a-bst/
 Counting elements - https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/528/week-1/3289/
 ```
+## Date : April-23rd-2020
+```
+System Design -
+https://leetcode.com/problems/bitwise-and-of-numbers-range/
+https://leetcode.com/problems/middle-of-the-linked-list/
+
+```
+
+
 
 
 

@@ -114,6 +114,7 @@ https://leetcode.com/problems/hamming-distance/
 https://leetcode.com/problems/sum-of-two-integers/
 https://leetcode.com/problems/jump-game/
 https://leetcode.com/problems/number-of-1-bits/
+https://leetcode.com/problems/counting-bits/
 ```
 
 

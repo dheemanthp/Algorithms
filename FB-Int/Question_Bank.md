@@ -120,6 +120,7 @@ https://leetcode.com/problems/counting-bits/
 ```
 https://leetcode.com/problems/single-number-ii/
 https://leetcode.com/problems/missing-number/
+https://leetcode.com/problems/power-of-two/
 ```
 
 

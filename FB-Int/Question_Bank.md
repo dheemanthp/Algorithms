@@ -119,6 +119,7 @@ https://leetcode.com/problems/counting-bits/
 ## Date : April-24th-2020
 ```
 https://leetcode.com/problems/single-number-ii/
+https://leetcode.com/problems/missing-number/
 ```
 
 

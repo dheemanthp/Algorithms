@@ -127,6 +127,8 @@ https://leetcode.com/problems/power-of-two/
 ```
 System Design -
 https://leetcode.com/problems/find-the-difference/
+https://leetcode.com/problems/insert-into-a-binary-search-tree/
+https://leetcode.com/problems/delete-node-in-a-bst/
 ```
 
 

@@ -101,6 +101,13 @@ for(int i=1; i<= 6; i++){
 }
 
 
-
-
+//Output:
+/*
+the result is 11
+the result is 21
+the result is 1211
+the result is 111221
+the result is 312211
+the result is 13112221
+*/
 

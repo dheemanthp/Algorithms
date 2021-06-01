@@ -22,7 +22,9 @@
 
 
 //   System.out.println(" The continous Max Sub array is: " + sol.continousSubArraySum(input4));
-
+//Start Index = 0
+//End Index = 0
+//The continous Max Sub array is: 0
  
  
  
@@ -46,9 +48,11 @@ int continousSubArraySum(int[] input) {
       endIndex = i;
     }
     
-    //current index will change if at all , all the 3 are equal , currentsum , maximumsum , and 
+   //current index will change if at all , all the 3 are equal , currentsum , maximumsum , and 
     //current element
-    if(currSum == input[i] && maxSum == input[i]){
+   //Here only reason i am checking input[i] != 0 , because of input 4 , 
+   //int[] input4 = {0, 0, 0, 0, 0, 0, 0};
+    if(currSum == input[i] && maxSum == input[i] && input[i] != 0){
       startIndex = i;
     }
     

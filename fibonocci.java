@@ -25,3 +25,9 @@ int fibhelper(int input){
     return fibhelper(input-1) + fibhelper(input-2);
   }
 } 
+
+
+//RUN:
+//sol.fibRecursion(10);
+//OUTPUT:
+// 1  1  2  3  5  8  13  21  34  55

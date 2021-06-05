@@ -1,6 +1,6 @@
 
 // 0, 1, 1, 2, 3, 5, 8....
-//Interative
+//Iterative
 void fib(int input){
   int first = 0, second = 1;
   for(int i=0; i< input; i++){

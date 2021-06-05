@@ -37,7 +37,8 @@ List<List<Integer>> threeSum(int nums[]) {
                 found++; 
                 }  
                 else 
-                { 
+                {
+                    //CRITICAL that we add the nums[j] to hashset , if the x value is not found .
                     s.add(nums[j]); 
                 } 
             } 
@@ -45,5 +46,39 @@ List<List<Integer>> threeSum(int nums[]) {
         return output;
             
      }
-  } 
+  }
+
+/*
+int[] array = {-1, 0, 1, 2, -1, -4};
+{ -1, 0, 1}
+{ -1, 2, -1}
+{ 0, 1, -1}
+
+*/
+
+
+  System.out.println("===================================================");
+  int[] array = {-1, 0, 1, 2, -1, -4};
+  int[] array1 = {-1, 0, 1, 2, -1, -4, -1, 0, 1, -1, 0 , 1};
+  int[] array2 = {0, 0};
+ List<List<Integer>> result = sol.threeSum(array2);
+
+   for(List<Integer> list: result) {
+
+       System.out.print("{");
+       int size = list.size();
+       int i = 0;
+       for(int n: list) {
+         
+         if( i == size-1) {
+           
+          System.out.print(" " + n);
+           
+         } else {
+          System.out.print(" " + n + ",");
+         }
+         i++;
+       }
+       System.out.println("}");
+    }
 
